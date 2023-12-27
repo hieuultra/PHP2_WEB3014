@@ -10,20 +10,27 @@
 //-tang tinh bao mat cua du an
 //-phat trien va su dung cac framework <=> phat trien he thong nhanh hon    
 
+//========================================
+//c1:
+//doi tuong-class
 class conVit
 {
+    //thuoc tinh/ attribute
     var $maso;
     var $canNang;
     var $ngaysinh;
     var $masochuong;
+
+    //method/action/phuong thuc
     function an()
     {
-        echo "con vit co ma so" . $this->maso . "dang an";
+        echo "con vit co ma so " . $this->maso . " dang an";
+        //$this tro den thuc the(vinh, trung) dang thuc thi action
     }
     function xuatChuong()
     {
         $x = 100;
-        echo "con cit co ma so" . $this->maso . ",can nang" . $this->canNang . " 
+        echo "con cit co ma so " . $this->maso . ",can nang" . $this->canNang . " 
         ,sinh truong trong" . $x . "ngay" . "da xuat chuong";
     }
     function choAn($luongthucan)
@@ -31,3 +38,26 @@ class conVit
         $this->canNang += $luongthucan;
     }
 }
+//ca the/ thuc the/ instance
+$vinh = new conVit();
+$vinh->maso = "cv01";
+$vinh->canNang = 2;
+$vinh->ngaysinh = '2029-02-02';
+$vinh->masochuong = '001';
+
+$trung = new conVit();
+$trung->maso = "cv02";
+$trung->canNang = 3;
+$trung->ngaysinh = '2028-03-02';
+$trung->masochuong = '002';
+
+$vinh->an();
+echo "<br>";
+$trung->an();
+// var_dump($vinh);
+// $vinh->name = "nguyen ba vinh";
+// echo $vinh->name;
+
+//=============================================
+
+
