@@ -1,7 +1,7 @@
 <?php
 //1. khai niem va viet code demo cho tinh chat truu tuong trong oop
 //2. dinh nghia va lay vd cho khai niem ham khoi tao
-//3.dinh nghia, lay vd va so sanh giua static method va method binh
+//3.dinh nghia, lay vd va so sanh giua static method va method binh thuong trong class
 //OOP: pp lap trinh huong doi tuong- lam viec voi cac class
 //Moi class <=> 1 doi tuong trong de bai <=> 1 kieu du lieu moi
 //Loi ich:
