@@ -1,7 +1,6 @@
 <?php
 require_once './Category.php';
-$catem = new Category();
-$cate = $catem->all();
+$cate = Category::all();
 // echo "<pre>";
 // var_dump($cate);
 ?>
