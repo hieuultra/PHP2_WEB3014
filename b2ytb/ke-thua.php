@@ -4,31 +4,57 @@
 // A không được phép sử dụng các tính chất/phương thức của lớp con của nó
 // php là ngôn ngữ đơn kế thừa (1 lớp chỉ đc phép extends 1 lớp khác)
 // 1 class A có thể là cha của nhiều lớp khác nhau
-class Animal
+// class Animal
+// {
+//     var $name;
+//     var $age;
+//     function __construct($name = "", $age = 0)
+//     {
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+//     function getInfo()
+//     {
+//         echo "toi ten la $this->name - toi dc $this->age tuoi";
+//     }
+// }
+
+// class dog extends Animal
+// {
+// }
+
+// class cat extends Animal
+// {
+// }
+// $rex = new dog('rex', 5);
+// $rin = new cat('Rin', 2);
+
+// $rex->getInfo();
+// echo "<br>";
+// $rin->getInfo();
+
+require_once './Category.php';
+require_once './product.php';
+// $cates = Category::all();
+// $prods = product::all();
+// $pro=product::find(7);
+// $pros = product::where('price', '<', 5000)->get();
+$pros = product::where('name', 'like', '%DVM%')->get();
+echo "<pre>";
+var_dump($pros);
+
+class A
 {
-    var $name;
-    var $age;
-    function __construct($name = "", $age = 0)
+    static function where()
     {
-        $this->name = $name;
-        $this->age = $age;
+        $model = new static;
+        return $model;
     }
-    function getInfo()
+
+    function get()
     {
-        echo "toi ten la $this->name - toi dc $this->age tuoi";
+        return 'danh sách dữ liệu';
     }
 }
 
-class dog extends Animal
-{
-}
-
-class cat extends Animal
-{
-}
-$rex = new dog('rex', 5);
-$rin = new cat('Rin', 2);
-
-$rex->getInfo();
-echo "<br>";
-$rin->getInfo();
+echo A::where()->get();
