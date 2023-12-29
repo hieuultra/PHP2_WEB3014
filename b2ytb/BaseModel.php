@@ -43,6 +43,11 @@ class BaseModel
         $model->querybuilder = "select * from " . $model->table . " where $col $con '$val'";
         return $model;
     }
+    function andWhere($col, $con, $val)
+    {
+        $this->querybuilder .= " and $col $con '$val'";
+        return $this;
+    }
     function get()
     {
         $stmt = $this->conn->prepare($this->querybuilder);
