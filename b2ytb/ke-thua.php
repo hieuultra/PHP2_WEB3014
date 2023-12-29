@@ -41,7 +41,7 @@ require_once './product.php';
 // $pros = product::where('price', '<', 5000)->get();
 $pros = product::where('name', 'like', '%DVM%')->get();
 echo "<pre>";
-var_dump($pros);
+// var_dump($pros);
 
 class A
 {
@@ -50,11 +50,13 @@ class A
         $model = new static;
         return $model;
     }
-
     function get()
     {
         return 'danh sách dữ liệu';
     }
 }
-
+// $thienth=A::where();
+// var_dump($thienth);
+// $thienth = new A();
+// echo $thienth->get();
 echo A::where()->get();
