@@ -1,9 +1,11 @@
 <?php
+require_once './app/models/product.php';
 class HomeController
 {
     public function index()
     {
-        return 'trang chu website';
+        $products = product::all();
+        include_once './app/views/homepage.php';
     }
     public function detail()
     {
