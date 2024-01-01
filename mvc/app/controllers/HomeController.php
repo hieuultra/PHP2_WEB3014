@@ -1,5 +1,9 @@
 <?php
-require_once './app/models/product.php';
+
+namespace App\Controllers;
+
+use App\Models\product;
+
 class HomeController
 {
     public function index()
