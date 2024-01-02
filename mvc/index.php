@@ -3,15 +3,11 @@ session_start(); //toan bo project deu sd session_start o day
 // tôi muốn: "tất cả các request tới thư mục mvc phải bắt buộc đi qua file index.php"
 // thu thập các url gửi lên project
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
-require_once './app/controllers/HomeController.php';
-require_once './app/controllers/ProductController.php';
-
-require_once './app/models/BaseModel.php';
-require_once './app/models/product.php';
-require_once './app/models/Category.php';
+require_once './vendor/autoload.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\ProductController;
+use App\Controllers\CategoryController;
 
 switch ($url) {
     case '/':
@@ -29,6 +25,10 @@ switch ($url) {
     case 'add-product':
         $ctr = new ProductController();
         echo $ctr->addForm();
+        break;
+    case 'list-cate':
+        $ctr = new CategoryController();
+        echo $ctr->index();
         break;
 
     default:
