@@ -4,6 +4,7 @@ session_start(); //toan bo project deu sd session_start o day
 // thu thập các url gửi lên project
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './vendor/autoload.php';
+require_once './commons/database-config.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\ProductController;

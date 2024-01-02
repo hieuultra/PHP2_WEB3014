@@ -1,7 +1,8 @@
 {
   "name": "admin/mvc",
   "require": {
-    "illuminate/database": "^10.39"
+    "illuminate/database": "^10.39",
+    "jenssegers/blade": "*"
   },
   "autoload": {
     "psr-4": {
