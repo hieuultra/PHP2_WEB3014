@@ -19,6 +19,18 @@ switch ($url) {
         $ctr = new HomeController();
         echo $ctr->detail();
         break;
+    case 'insert-cate':
+        $ctr = new CategoryController();
+        $ctr->addData();
+        break;
+    case 'update-cate':
+        $ctr = new CategoryController();
+        $ctr->editData();
+        break;
+    case 'delete-cate':
+        $ctr = new CategoryController();
+        $ctr->delete();
+        break;
     case 'contact':
         $ctr = new HomeController();
         echo $ctr->contact();
