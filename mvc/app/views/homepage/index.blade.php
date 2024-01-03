@@ -12,14 +12,25 @@
         <thead>
             <th>Id</th>
             <th>name</th>
+            <th>Image</th>
             <th>price</th>
+            <th>
+                <a href="./add-product" class="btn btn-success">Add new</a>
+            </th>
         </thead>
         <tbody>
            @foreach($listItem as $pro)
                 <tr>
                     <td>{{$pro->id}}</td>
                     <td>{{$pro->name}}</td>
+                    <td>
+                        <img src="{{$pro->image}}" alt="" class="img-avaatr" width="100">
+                    </td>
                     <td>{{$pro->price}}</td>
+                    <td>
+                        <a href="./edit-product?id={{$pro->id}}" class="btn btn-primary">Edit</a>
+                        <a href="./remove-product?id={{$pro->id}}" class="btn btn-danger">Remove</a>
+                    </td>
                 </tr>
            @endforeach
         </tbody>

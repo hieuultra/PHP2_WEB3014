@@ -14,7 +14,8 @@ class ProductController extends BaseController
         $cates = Category::all();
         $this->render('product.add-form', ["cates" => $cates]);
     }
-    public function saveAdd(){
+    public function saveAdd()
+    {
         $requestData = $_POST;
         $imgFile = $_FILES['image'];
 
@@ -35,7 +36,7 @@ class ProductController extends BaseController
 
         $filename = "";
         // nếu có ảnh up lên thì lưu ảnh
-        if($imgFile['size'] > 0){
+        if ($imgFile['size'] > 0) {
             $filename = uniqid() . '-' . $imgFile['name'];
             move_uploaded_file($imgFile['tmp_name'], './public/uploads/' . $filename);
             $filename = 'public/uploads/' . $filename;
@@ -43,6 +44,25 @@ class ProductController extends BaseController
         $model->image = $filename;
         $model->save();
         header('location: ./');
-        
+    }
+    public function remove()
+    {
+        $removeId = isset($_GET['id']) ? $_GET['id'] : null;
+        if (!$removeId) {
+            header("location: ./?msg=không đủ thông tin để xóa");
+            die;
+        }
+        // kiểm tra xem id có thật hay không
+        $model = Product::find($removeId);
+
+        if (!$model) {
+            $msg = "id không tồn tại!";
+        } else {
+            Product::destroy($removeId);
+            $msg = "Xóa sản phẩm thành công";
+        }
+
+        header("location: ./?msg=$msg");
+        die;
     }
 }

@@ -12,14 +12,25 @@
         <thead>
             <th>Id</th>
             <th>name</th>
+            <th>Image</th>
             <th>price</th>
+            <th>
+                <a href="./add-product" class="btn btn-success">Add new</a>
+            </th>
         </thead>
         <tbody>
            <?php $__currentLoopData = $listItem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                     <td><?php echo e($pro->id); ?></td>
                     <td><?php echo e($pro->name); ?></td>
+                    <td>
+                        <img src="<?php echo e($pro->image); ?>" alt="" class="img-avaatr" width="100">
+                    </td>
                     <td><?php echo e($pro->price); ?></td>
+                    <td>
+                        <a href="./edit-product?id=<?php echo e($pro->id); ?>" class="btn btn-primary">Edit</a>
+                        <a href="./remove-product?id=<?php echo e($pro->id); ?>" class="btn btn-danger">Remove</a>
+                    </td>
                 </tr>
            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>

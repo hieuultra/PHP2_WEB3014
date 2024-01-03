@@ -20,6 +20,10 @@ switch ($url) {
         $ctr = new HomeController();
         $ctr->detail();
         break;
+    case 'list-cate':
+        $ctr = new CategoryController();
+        $ctr->index();
+        break;
     case 'insert-cate':
         $ctr = new CategoryController();
         $ctr->addData();
@@ -44,9 +48,17 @@ switch ($url) {
         $ctr = new ProductController();
         $ctr->saveAdd();
         break;
-    case 'list-cate':
-        $ctr = new CategoryController();
-        $ctr->index();
+    case 'remove-product':
+        $ctr = new ProductController();
+        $ctr->remove();
+        break;
+    case 'edit-product':
+        $ctr = new ProductController();
+        $ctr->editForm();
+        break;
+    case 'save-edit-product':
+        $ctr = new ProductController();
+        $ctr->saveEdit();
         break;
 
     default:
