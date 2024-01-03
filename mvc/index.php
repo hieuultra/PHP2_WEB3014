@@ -10,14 +10,15 @@ use App\Controllers\HomeController;
 use App\Controllers\ProductController;
 use App\Controllers\CategoryController;
 
+//routing
 switch ($url) {
     case '/':
         $ctr = new HomeController();
-        echo $ctr->index();
+        $ctr->index();
         break;
     case 'detail':
         $ctr = new HomeController();
-        echo $ctr->detail();
+        $ctr->detail();
         break;
     case 'insert-cate':
         $ctr = new CategoryController();
@@ -33,15 +34,19 @@ switch ($url) {
         break;
     case 'contact':
         $ctr = new HomeController();
-        echo $ctr->contact();
+        $ctr->contact();
         break;
     case 'add-product':
         $ctr = new ProductController();
-        echo $ctr->addForm();
+        $ctr->addForm();
+        break;
+    case 'save-add-product':
+        $ctr = new ProductController();
+        $ctr->saveAdd();
         break;
     case 'list-cate':
         $ctr = new CategoryController();
-        echo $ctr->index();
+        $ctr->index();
         break;
 
     default:

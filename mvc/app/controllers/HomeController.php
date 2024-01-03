@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 use App\Models\product;
 
-class HomeController
+class HomeController extends BaseController
 {
     public function index()
     {
         $products = product::all();
-        include_once './app/views/homepage.php';
+        $this->render('homepage.index', ["listItem" => $products]);
     }
     public function detail()
     {
