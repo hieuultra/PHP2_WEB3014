@@ -71,6 +71,7 @@ class Crush
 $hieu = new Crush('bui trung hieu', 2004, 'nam', 'ha noi', '09876431');
 echo $hieu->getAge();
 echo "<br>";
+$hieu->setName("hieu dz");
 echo $hieu->info();
 echo "<br>";
 echo $hieu->check();
