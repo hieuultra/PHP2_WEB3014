@@ -1,7 +1,7 @@
 <?php
 //3.dinh nghia, lay vd va so sanh giua static method va method binh thuong trong class
 
-class animals
+class hieuvip
 {
     var $name = "bui trung hieu";
     function run()
@@ -16,10 +16,11 @@ class animals
         $model->run();
         echo "<br>";
         //ko dc phep dung $this
-        echo "eat";
+        // echo "eat";
     }
 }
-// $vinh = new animal();
-// $vinh->run();
+$vinh = new hieuvip();
+$vinh->name='vinh ngu';
+$vinh->run();
 echo "<br>";
-animals::eat();
+$vinh::eat();
