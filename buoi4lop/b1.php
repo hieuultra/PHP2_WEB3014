@@ -73,14 +73,16 @@ class GiangVien extends conNguoi
         return $info . "<br>so gio giang la: " . $this->soGioGiang . ", so gio day: " . $this->luongGio;
     }
 }
-$hieu = new conNguoi('bui trung hieu', 2004, 'ha noi', 'hieubtph32408', '0363707561');
-// echo $hieu->getDiaChi();
-echo "<br>";
-echo $hieu->getAge();
-echo "<br>";
-echo $hieu->info();
-$hung = new GiangVien('hung cv', 1998, 'ha noi', 'hungvcph32456', '0983275927859', 9, 6);
-echo "<br>";
-echo $hung->tinhLuong();
-echo "<br>";
-echo $hung->info();
+// $hieu = new conNguoi('bui trung hieu', 2004, 'ha noi', 'hieubtph32408', '0363707561');
+// // echo $hieu->getDiaChi();
+// echo "<br>";
+// echo $hieu->getAge();
+// echo "<br>";
+// echo $hieu->info();
+// $hung = new GiangVien('hung cv', 1998, 'ha noi', 'hungvcph32456', '0983275927859', 9, 6);
+// echo "<br>";
+// echo $hung->tinhLuong();
+// echo "<br>";
+// echo $hung->info();
+
+
