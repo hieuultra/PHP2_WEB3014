@@ -21,7 +21,7 @@ function updateCat($name)
     $cat_id = isset($_GET['id']) ? $_GET['id'] : null;
     $cate = getCategory($cat_id);
 
-    $check = editCat($cat_id,$name);
+    $check = editCat($cat_id, $name);
     if (!$check) {
         echo '<script>alert("Cap nhat thành công")</script>';
         echo '<script>window.location.href = "index.php";</script>';
@@ -30,9 +30,17 @@ function updateCat($name)
         echo '<script>window.location.href = "index.php";</script>';
     }
 }
-function hardDeleteCat(){
-
+function hardDeleteCat()
+{
+    $cat_id = isset($_GET['id']) ? $_GET['id'] : null;
+    hardDelete($cat_id);
+    echo '<script>alert("Xoa thành công")</script>';
+    echo "<script>window.location.href='index.php';</script>";
 }
-function softDeleteCat(){
-    
+function softDeleteCat()
+{
+    $cat_id = isset($_GET['id']) ? $_GET['id'] : null;
+    softDelete($cat_id);
+    echo '<script>alert("Xoa thành công")</script>';
+    echo "<script>window.location.href='index.php';</script>";
 }

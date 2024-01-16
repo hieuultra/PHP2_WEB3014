@@ -37,7 +37,7 @@ switch ($url) {
     case 'hard-delete-cat':
         hardDeleteCat();
         break;
-    case 'soft-delete-catt':
+    case 'soft-delete-cat':
         softDeleteCat();
         break;
 }
