@@ -16,3 +16,23 @@ function viewEditCat()
     $cate = getCategory($cat_id);
     include 'views/category/update.php';
 }
+function updateCat($name)
+{
+    $cat_id = isset($_GET['id']) ? $_GET['id'] : null;
+    $cate = getCategory($cat_id);
+
+    $check = editCat($cat_id,$name);
+    if (!$check) {
+        echo '<script>alert("Cap nhat thành công")</script>';
+        echo '<script>window.location.href = "index.php";</script>';
+    } else {
+        echo '<script>alert("Cap nhat that bai")</script>';
+        echo '<script>window.location.href = "index.php";</script>';
+    }
+}
+function hardDeleteCat(){
+
+}
+function softDeleteCat(){
+    
+}

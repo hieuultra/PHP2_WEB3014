@@ -24,9 +24,9 @@
                     <tr>
                         <td><?= $l['id'] ?></td>
                         <td><?= $l['name'] ?></td>
-                        <td><a href="?url=update-category&id=<?= $l['id'] ?>" class="btn btn-warning">EDIT</a></td>
-                        <td><a onclick="return confirm('you want delete sure?')" href="?url=hard-delete-category&id=<?= $l['id'] ?>" class="btn btn-danger">Remove cung</a></td>
-                        <td><a onclick="return confirm('you want delete sure?')" href="?url=soft-delete-category&id=<?= $l['id'] ?>" class="btn btn-danger">Remove mem</a></td>
+                        <td><a href="?url=edit-cat&id=<?= $l['id'] ?>" class="btn btn-warning">EDIT</a></td>
+                        <td><a onclick="return confirm('you want delete sure?')" href="?url=hard-delete-cat&id=<?= $l['id'] ?>" class="btn btn-danger">Remove cung</a></td>
+                        <td><a onclick="return confirm('you want delete sure?')" href="?url=soft-delete-cat&id=<?= $l['id'] ?>" class="btn btn-danger">Remove mem</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

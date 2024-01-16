@@ -11,8 +11,8 @@
 <body>
     <h2>EDIT CAT</h2>
     <?php if ($cate) { ?>
-        <form action="?url=edit-cat" method="post">
-            NAME: <input type="text" name="name" id="">
+        <form action="?url=edit-cat&id=<?= $cate['id'] ?>" method="post">
+            NAME: <input type="text" name="name" id="" value="<?= $cate['name'] ?>">
             <input type="submit" class="btn btn-primary" value="UPDATE" name="edit">
         </form>
     <?php } ?>

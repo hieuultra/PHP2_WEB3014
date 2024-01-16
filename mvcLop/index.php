@@ -27,7 +27,17 @@ switch ($url) {
         }
         addCategory();
         break;
-        case 'edit-cat':
-            viewEditCat();
-            break;
+    case 'edit-cat':
+        if (isset($_POST['edit'])) {
+            updateCat($_POST['name']);
+            header("location: index.php");
+        }
+        viewEditCat();
+        break;
+    case 'hard-delete-cat':
+        hardDeleteCat();
+        break;
+    case 'soft-delete-catt':
+        softDeleteCat();
+        break;
 }
