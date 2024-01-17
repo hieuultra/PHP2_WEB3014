@@ -23,14 +23,16 @@ switch ($url) {
     case 'add-cat':
         if (isset($_POST['save'])) {
             addCat($_POST['name']);
-            header("location: index.php");
+            echo '<script>alert("sucssely!!")</script>';
+            echo '<script>window.location.href = "index.php";</script>';
         }
         addCategory();
         break;
     case 'edit-cat':
         if (isset($_POST['edit'])) {
             updateCat($_POST['name']);
-            header("location: index.php");
+            echo '<script>alert("Cap nhat sản phẩm thành công")</script>';
+            echo '<script>window.location.href = "index.php";</script>';
         }
         viewEditCat();
         break;
