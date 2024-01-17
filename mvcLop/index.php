@@ -40,4 +40,7 @@ switch ($url) {
     case 'soft-delete-cat':
         softDeleteCat();
         break;
+    default:
+
+        break;
 }
