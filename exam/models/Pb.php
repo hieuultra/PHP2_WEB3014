@@ -21,9 +21,10 @@ class Pban extends DB
     function update($id, $name, $address, $email)
     {
         $sql = "update phongban set name='" . $name . "', address='" . $address . "', email='" . $email . "' where id=" . $id;
-        return $this->getData($sql,false);
+        return $this->getData($sql, false);
     }
-    function delete($id){
+    function delete($id)
+    {
         $sql = "delete from phongban where id = $id";
         return $this->getData($sql, false);
     }
