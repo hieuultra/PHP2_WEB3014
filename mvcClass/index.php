@@ -1,6 +1,8 @@
 <?php
-require_once 'controllers/productController.php';
+require_once "vendor/autoload.php";
 // điều hướng các phương thức từ controller
+use App\controllers\ProductController;
+use App\models\Product;
 
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 $controler = new ProductController();

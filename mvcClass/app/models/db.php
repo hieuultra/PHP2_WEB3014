@@ -1,4 +1,7 @@
 <?php
+
+namespace App\models;
+use PDO;
 require_once 'env.php';
 class DB
 {

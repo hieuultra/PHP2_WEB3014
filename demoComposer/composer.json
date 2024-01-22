@@ -1,0 +1,15 @@
+{
+    "name": "hieu/mvc",
+    "autoload": {
+        "psr-4": {
+            "Hieu\\Mvc\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hieuultra",
+            "email": "147162531+hieuultra@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

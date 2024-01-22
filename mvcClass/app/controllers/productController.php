@@ -1,5 +1,9 @@
 <?php
-require_once 'models/product.php';
+
+namespace App\controllers;
+
+use App\models\product;
+
 class ProductController
 {
     function listProduct()
@@ -7,10 +11,10 @@ class ProductController
         $obj = new Product();
         $product = $obj->getProduct();
         //var_dump($product);
-        require_once 'views/product/list.php';
+        require_once 'app/views/product/list.php';
     }
     function addProduct()
     {
-        require_once 'views/product/add.php';
+        require_once 'app/views/product/add.php';
     }
 }
