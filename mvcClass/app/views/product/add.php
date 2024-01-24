@@ -1,7 +1,7 @@
 
-    <form action="" method="post">
-        <input type="text" name="name" >
-        <input type="text" name="price" >
-        <input type="text" name="quantity" >
+    <form action="add" method="post">
+        NAME<input type="text" name="name" >
+        PRICE<input type="text" name="price" >
+        QUANTITY<input type="text" name="quantity" >
         <input type="submit" value="ADD" name ="add" >
     </form>

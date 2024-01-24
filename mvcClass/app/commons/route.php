@@ -22,8 +22,12 @@ $router->get('/', function () {
 
 
 //định nghĩa đường dẫn trỏ đến Product Controller
-$router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
 $router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
+$router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
+$router->post('add', [App\Controllers\ProductController::class, 'add']);
+$router->get('viewUpdate', [App\Controllers\ProductController::class, 'viewUpdate']);
+$router->post('editPro', [App\Controllers\ProductController::class, 'editPro']);
+$router->get('delete', [App\Controllers\ProductController::class, 'delete']);
 
 
 
