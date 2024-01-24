@@ -17,12 +17,12 @@ $router->filter('auth', function () {
 
 // bắt đầu định nghĩa ra các đường dẫn
 $router->get('/', function () {
-    return "trang chủ";
+    return (new App\Controllers\ProductController())->listProduct();
 });
 
 
 //định nghĩa đường dẫn trỏ đến Product Controller
-$router->get('test', [App\Controllers\ProductController::class, 'nameFunction']);
+$router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
 $router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
 
 
