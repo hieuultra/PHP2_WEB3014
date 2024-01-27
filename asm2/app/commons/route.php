@@ -17,7 +17,7 @@ $router->filter('auth', function () {
 
 // bắt đầu định nghĩa ra các đường dẫn
 $router->get('/', function () {
-    return (new App\Controllers\ProductController())->listProduct();
+    return (new App\Controllers\UserController())->userIndex();
 });
 
 
