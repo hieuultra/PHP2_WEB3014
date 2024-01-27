@@ -69,8 +69,8 @@
 
                         <div class="collapse" id="collapseCate" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="?act=listCategory">List categories</a>
-                                <a class="nav-link" href="?act=add_cat">Add categories</a>
+                                <a class="nav-link" href="listCat">List categories</a>
+                                <a class="nav-link" href="addCat">Add categories</a>
                             </nav>
                         </div>
 
@@ -87,8 +87,8 @@
 
                         <div class="collapse" id="collapseProduct" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="?act=list_pro">List product</a>
-                                <a class="nav-link" href="?act=add_pro">Add product</a>
+                                <a class="nav-link" href="listPro">List product</a>
+                                <a class="nav-link" href="addPro">Add product</a>
                             </nav>
                         </div>
 
@@ -102,24 +102,6 @@
                                 <i class="fas fa-angle-down"></i>
                             </div>
                         </a>
-
-                        <!-- account -->
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAccount" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon">
-                                <i class="fas fa-columns"></i>
-                            </div>
-                            Account
-                            <div class="sb-sidenav-collapse-arrow">
-                                <i class="fas fa-angle-down"></i>
-                            </div>
-                        </a>
-
-                        <div class="collapse" id="collapseAccount" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="?act=list_account">List account</a>
-                                <a class="nav-link" href="?act=add_acc">Add account</a>
-                            </nav>
-                        </div>
                     </div>
             </nav>
         </div>
