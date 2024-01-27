@@ -28,6 +28,7 @@ $router->get('/', function () {
 
 //định nghĩa đường dẫn trỏ đến category Controller
 $router->get('category/listCat', [App\Controllers\CategoryController::class, 'listCat']);
+$router->get('category/addCat', [App\Controllers\CategoryController::class, 'addCat']);
 //định nghĩa đường dẫn trỏ đến Product Controller
 $router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
 $router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
