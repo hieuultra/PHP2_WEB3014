@@ -1,59 +1,52 @@
-<main>
-  <div class="container-fluid px-4">
-    <h1 class="mt-4">List categories</h1>
-    <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item active">Dashboard</li>
-    </ol>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- Data -->
-    <div class="card mb-4">
-      <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        List categories
-      </div>
-      <div class="card-body">
-        <table id="datatablesSimple">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Category name</th>
-              <th>Image</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <?php foreach ($dslh as $d) {
-              extract($d);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bao gồm Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>LIST CAT</title>
+</head>
 
-              $suadm = "index.php?act=edit_cat&id_cat=" . $id_cat;
-              $xoadm = "index.php?act=delete_cat&id_cat=" . $id_cat;
-              $hinhpath = "../upload/" . $img_cat;
-              if (is_file($hinhpath)) {
-                $hinh = "<img src='" . $hinhpath . "' height='100' width='300'>";
-              } else {
-                $hinh = "No photo";
-              }
+<body>
 
-              echo ' 
-          <tr>
-            <td>' . $id_cat . '</td>
-            <td>' . $name_cat . '</td>
-            <td>' . $hinh . '</td>
-            <td class="text-center">
-              <a href="' . $suadm . '" class="btn btn-warning"><input type="button" value="UPDATE" /></a>
-              <a href="' . $xoadm . '" class="btn btn-danger"><input type="button" value="DELETE" onclick ="return confirm(\'ban co chac chan muon xoa?\')" /></a>
-            </td>
-          </tr>
-     ';
-            }
-            ?> -->
-          </tbody>
-        </table>
-        <a href="add_cat">
-          <input type="submit" class="btn btn-primary" name="add" value="ADD">
-        </a>
+  <div class="container mt-5">
+    <h2 class="mb-4">LIST CAT</h2>
 
-      </div>
-    </div>
+    <!-- Nút Thêm -->
+    <a href="addCat" class="btn btn-primary mb-3">Add</a>
+
+    <!-- Bảng Bootstrap -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Category name</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <?php foreach ($product as $p) : ?>
+                    <tr>
+                        <td><?= $p['id'] ?></td>
+                        <td><?= $p['name'] ?></td>
+                        <td><?= $p['price'] ?></td>
+                        <td><img src="<?= $p['image'] ?>" alt="" width="60" height="70"></td>
+                        <td><?= $p['category_name'] ?></td>
+                        <td><a href="?url=update-product&id=<?= $p['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
+                        <td><a onclick="return confirm('you want delete sure?')" href="?url=hard-delete-product&id=<?= $p['id'] ?>" class="btn btn-danger">Remove cung</a></td>
+                        <td><a onclick="return confirm('you want delete sure?')" href="?url=soft-delete-product&id=<?= $p['id'] ?>" class="btn btn-danger">Remove mem</a></td>
+                    </tr>
+                <?php endforeach ?> -->
+      </tbody>
+    </table>
+    <!-- Kết thúc Bảng Bootstrap -->
   </div>
-</main>
+
+  <!-- Bao gồm Bootstrap JS và Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

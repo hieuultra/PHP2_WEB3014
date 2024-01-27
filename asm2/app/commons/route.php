@@ -16,11 +16,18 @@ $router->filter('auth', function () {
 
 
 // bắt đầu định nghĩa ra các đường dẫn
+// $router->get('/', function () {
+//     return (new App\Controllers\UserController())->userIndex();
+// });
+// $router->get('/app/views/admin/', function () {
+//     return (new App\Controllers\AdminController())->adminIndex();
+// });
 $router->get('/', function () {
-    return (new App\Controllers\UserController())->userIndex();
+    return (new App\Controllers\AdminController())->adminIndex();
 });
 
-
+//định nghĩa đường dẫn trỏ đến category Controller
+$router->get('category/listCat', [App\Controllers\CategoryController::class, 'listCat']);
 //định nghĩa đường dẫn trỏ đến Product Controller
 $router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
 $router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
