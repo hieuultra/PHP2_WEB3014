@@ -64,4 +64,41 @@ class CategoryController
         $cat->insertCat($_POST['name'], $_FILES['img']);
         header("location:listCat");
     }
+    function viewUpdateCat()
+    {
+        $id = $_GET['id'];
+        $obj1 = new Category();
+        $cat = $obj1->getCat($id);
+        require_once 'app/views/admin/category/editCat.php';
+    }
+    function editCat()
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj1 = new Category();
+        $cat = $obj1->getCat($id);
+        $check = $obj1->update($id, $_POST['name']);
+        if (!$check) {
+            echo "<script>alert('cap nhap thanh cong')</script>";
+            echo "<script>window.location.href='listCat';</script>";
+        } else {
+            echo "<script>alert('cap nhat that bai')</script>";
+            echo "<script>window.location.href='listCat';</script>";
+        }
+    }
+    function hard_delete_cat()
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj = new Category();
+        $obj->hard_delete_cat($id);
+        echo '<script>alert("Xoa thành công")</script>';
+        echo "<script>window.location.href='listCat';</script>";
+    }
+    function soft_delete_cat()
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj = new Category();
+        $obj->soft_delete_cat($id);
+        echo '<script>alert("Xoa thành công")</script>';
+        echo "<script>window.location.href='listCat';</script>";
+    }
 }

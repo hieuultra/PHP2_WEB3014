@@ -13,39 +13,24 @@
 
     <div class="container mt-5">
         <h2 class="mb-4">Edit Cat</h2>
-        <?php
-        //kiem tra xem session loi co ton tai ko
-        if (isset($_SESSION['error_messages'])) {
-            $error_messages = $_SESSION['error_messages'];
-            // // Hiển thị thông báo lỗi cho người dùng
-            // foreach ($error_messages as $field => $messages) {
-            //     foreach ($messages as $message) {
-            //         echo '<div class="alert alert-danger" role="alert">' . $message . '</div>';
-            //     }
-            // }
-            // // Xóa thông báo lỗi từ session sau khi hiển thị
-            // unset($_SESSION['error_messages']);
-        }
-        ?>
-        <form action="?url=add-product" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="tenSanPham" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên sản phẩm">
-                <?php
-                echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
-                echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
-                ?>
-            </div>
+        <?php if ($cat) { ?>
+            <form action="editCat&id=<?= $cat['id'] ?>" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="tenSanPham" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<?= $cat['name'] ?>">
+                </div>
 
-            <div class="mb-3">
-                <label for="hinhAnh" class="form-label">Image</label>
-                <input type="file" class="form-control" name="img" id="img">
-            </div>
+                <div class="mb-3">
+                    <label for="hinhAnh" class="form-label">Image</label>
+                    <input type="file" class="form-control" name="img" id="img">
+                    <img src="<?= $cat['img'] ?>" alt="">
+                </div>
 
 
-            <button type="submit" class="btn btn-primary" name="edit">edit</button>
-            <a href="category/listCat" class="btn btn-primary ">List</a>
-        </form>
+                <button type="submit" class="btn btn-primary" name="edit">edit</button>
+                <a href="listCat" class="btn btn-primary ">List</a>
+            <?php } ?>
+            </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

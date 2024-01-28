@@ -33,9 +33,9 @@
             <td><?= $c['id'] ?></td>
             <td><?= $c['name'] ?></td>
             <td><img src="<?= $c['img'] ?>" alt="" width="60" height="70"></td>
-            <td><a href="viewUpdate&id=<?= $c['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
-            <td><a onclick="return confirm('you want delete sure?')" href="?url=hard-delete-cat&id=<?= $c['id'] ?>" class="btn btn-danger">Remove cung</a></td>
-            <td><a onclick="return confirm('you want delete sure?')" href="?url=soft-delete-catt&id=<?= $c['id'] ?>" class="btn btn-danger">Remove mem</a></td>
+            <td><a href="viewUpdateCat&id=<?= $c['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
+            <td><a onclick="return confirm('you want delete sure?')" href="hard_delete_cat&id=<?= $c['id'] ?>" class="btn btn-danger">Hard delete</a></td>
+            <td><a onclick="return confirm('you want delete sure?')" href="soft_delete_cat&id=<?= $c['id'] ?>" class="btn btn-danger">Soft delete</a></td>
           </tr>
         <?php endforeach ?>
       </tbody>

@@ -30,6 +30,10 @@ $router->get('category/listCat', [App\Controllers\CategoryController::class, 'li
 $router->get('category/addCat', [App\Controllers\CategoryController::class, 'addCat']);
 $router->post('category/addCate', [App\Controllers\CategoryController::class, 'addCate']);
 $router->post('category/addCategory', [App\Controllers\CategoryController::class, 'addCategory']);
+$router->get('category/viewUpdateCat', [App\Controllers\CategoryController::class, 'viewUpdateCat']);
+$router->post('category/editCat', [App\Controllers\CategoryController::class, 'editCat']);
+$router->get('category/hard_delete_cat', [App\Controllers\CategoryController::class, 'hard_delete_cat']);
+$router->get('category/soft_delete_cat', [App\Controllers\CategoryController::class, 'soft_delete_cat']);
 //định nghĩa đường dẫn trỏ đến Product Controller
 $router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
 $router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
