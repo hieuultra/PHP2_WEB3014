@@ -70,7 +70,7 @@
                         <div class="collapse" id="collapseCate" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="category/listCat">List categories</a>
-                                <a class="nav-link" href="addCat">Add categories</a>
+                                <a class="nav-link" href="category/addCat">Add categories</a>
                             </nav>
                         </div>
 

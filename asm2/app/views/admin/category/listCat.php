@@ -28,20 +28,19 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <?php foreach ($product as $p) : ?>
-                    <tr>
-                        <td><?= $p['id'] ?></td>
-                        <td><?= $p['name'] ?></td>
-                        <td><?= $p['price'] ?></td>
-                        <td><img src="<?= $p['image'] ?>" alt="" width="60" height="70"></td>
-                        <td><?= $p['category_name'] ?></td>
-                        <td><a href="?url=update-product&id=<?= $p['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
-                        <td><a onclick="return confirm('you want delete sure?')" href="?url=hard-delete-product&id=<?= $p['id'] ?>" class="btn btn-danger">Remove cung</a></td>
-                        <td><a onclick="return confirm('you want delete sure?')" href="?url=soft-delete-product&id=<?= $p['id'] ?>" class="btn btn-danger">Remove mem</a></td>
-                    </tr>
-                <?php endforeach ?> -->
+        <?php foreach ($cat as $c) : ?>
+          <tr>
+            <td><?= $c['id'] ?></td>
+            <td><?= $c['name'] ?></td>
+            <td><img src="<?= $c['img'] ?>" alt="" width="60" height="70"></td>
+            <td><a href="viewUpdate&id=<?= $c['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
+            <td><a onclick="return confirm('you want delete sure?')" href="?url=hard-delete-cat&id=<?= $c['id'] ?>" class="btn btn-danger">Remove cung</a></td>
+            <td><a onclick="return confirm('you want delete sure?')" href="?url=soft-delete-catt&id=<?= $c['id'] ?>" class="btn btn-danger">Remove mem</a></td>
+          </tr>
+        <?php endforeach ?>
       </tbody>
     </table>
+    <a href="../" class="btn btn-primary mb-3">Home Admin</a>
     <!-- Kết thúc Bảng Bootstrap -->
   </div>
 

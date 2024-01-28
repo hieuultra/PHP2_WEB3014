@@ -11,7 +11,7 @@ class Category extends DB
         $sql = "select * from category";
         return $this->getData($sql);
     }
-    function insertCat($name, $img)
+    function insertCat($name,$img)
     {
         $sql = "insert into category(name,img) values('$name','$img')";
         return $this->getData($sql, false);

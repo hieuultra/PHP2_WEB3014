@@ -27,10 +27,10 @@
             // unset($_SESSION['error_messages']);
         }
         ?>
-        <form action="addCat" method="POST" enctype="multipart/form-data">
+        <form action="addCategory" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="tenSanPham" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên sản phẩm">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên">
                 <?php
                 echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                 echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
@@ -41,10 +41,8 @@
                 <label for="hinhAnh" class="form-label">Image</label>
                 <input type="file" class="form-control" name="img" id="img">
             </div>
-
-
-            <button type="submit" class="btn btn-primary" name="Save">Save</button>
-            <a href="category/listCat" class="btn btn-primary ">List</a>
+            <button type="submit" class="btn btn-primary" name="save">Save</button>
+            <a href="listCat" class="btn btn-primary ">List</a>
         </form>
     </div>
 

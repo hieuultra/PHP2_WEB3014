@@ -25,10 +25,11 @@ $router->filter('auth', function () {
 $router->get('/', function () {
     return (new App\Controllers\AdminController())->adminIndex();
 });
-
 //định nghĩa đường dẫn trỏ đến category Controller
 $router->get('category/listCat', [App\Controllers\CategoryController::class, 'listCat']);
 $router->get('category/addCat', [App\Controllers\CategoryController::class, 'addCat']);
+$router->post('category/addCate', [App\Controllers\CategoryController::class, 'addCate']);
+$router->post('category/addCategory', [App\Controllers\CategoryController::class, 'addCategory']);
 //định nghĩa đường dẫn trỏ đến Product Controller
 $router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
 $router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
