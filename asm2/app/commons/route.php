@@ -35,12 +35,13 @@ $router->post('category/editCat', [App\Controllers\CategoryController::class, 'e
 $router->get('category/hard_delete_cat', [App\Controllers\CategoryController::class, 'hard_delete_cat']);
 $router->get('category/soft_delete_cat', [App\Controllers\CategoryController::class, 'soft_delete_cat']);
 //định nghĩa đường dẫn trỏ đến Product Controller
-$router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
-$router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
-$router->post('add', [App\Controllers\ProductController::class, 'add']);
-$router->get('viewUpdate', [App\Controllers\ProductController::class, 'viewUpdate']);
-$router->post('editPro', [App\Controllers\ProductController::class, 'editPro']);
-$router->get('delete', [App\Controllers\ProductController::class, 'delete']);
+$router->get('category/listPro', [App\Controllers\ProductController::class, 'listPro']);
+$router->get('category/addPro', [App\Controllers\ProductController::class, 'addPro']);
+$router->post('category/addProduct', [App\Controllers\ProductController::class, 'addProduct']);
+$router->get('category/viewUpdatePro', [App\Controllers\ProductController::class, 'viewUpdatePro']);
+$router->post('category/editPro', [App\Controllers\ProductController::class, 'editPro']);
+$router->get('category/hard_delete_pro', [App\Controllers\ProductController::class, 'hard_delete_pro']);
+$router->get('category/soft_delete_pro', [App\Controllers\ProductController::class, 'soft_delete_pro']);
 
 
 

@@ -87,8 +87,8 @@
 
                         <div class="collapse" id="collapseProduct" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="listPro">List product</a>
-                                <a class="nav-link" href="addPro">Add product</a>
+                                <a class="nav-link" href="category/listPro">List product</a>
+                                <a class="nav-link" href="category/addPro">Add product</a>
                             </nav>
                         </div>
 
