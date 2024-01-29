@@ -16,19 +16,21 @@ $router->filter('auth', function () {
 
 
 // bắt đầu định nghĩa ra các đường dẫn
+//duong dan user
 $router->get('/', function () {
     return (new App\Controllers\UserController())->userIndex();
 });
-// $router->get('/app/views/admin/', function () {
-//     return (new App\Controllers\AdminController())->adminIndex();
-// });
+$router->get('listCat', function () {
+    return (new App\Controllers\UserController())->listCat();
+});
+
+//duong dan admin
 $router->get('/admin', function () {
     return (new App\Controllers\AdminController())->adminIndex();
 });
 //định nghĩa đường dẫn trỏ đến category Controller
 $router->get('admin/category/listCat', [App\Controllers\CategoryController::class, 'listCat']);
 $router->get('admin/category/addCat', [App\Controllers\CategoryController::class, 'addCat']);
-$router->post('admin/category/addCate', [App\Controllers\CategoryController::class, 'addCate']);
 $router->post('admin/category/addCategory', [App\Controllers\CategoryController::class, 'addCategory']);
 $router->get('admin/category/viewUpdateCat', [App\Controllers\CategoryController::class, 'viewUpdateCat']);
 $router->post('admin/category/editCat', [App\Controllers\CategoryController::class, 'editCat']);

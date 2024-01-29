@@ -3,19 +3,29 @@
 namespace App\controllers;
 
 use App\models\Product;
+use eftec\bladeone\BladeOne;
 
 class ProductController
 {
+    public $view;
+    function __construct()
+    {
+        $view = "app/views";
+        $cache = "app/cache";
+        $this->view = new BladeOne($view, $cache, BladeOne::MODE_AUTO);
+    }
     function listProduct()
     {
         $obj = new Product();
         $product = $obj->getProduct();
         //var_dump($product);
-        require_once 'app/views/product/list.php';
+        // require_once 'app/views/product/list.php';
+        return $this->view->run('product.show', ['pro' => $product]);
     }
     function addProduct()
     {
-        require_once 'app/views/product/add.php';
+        return $this->view->run('product.add');
+        // require_once 'app/views/product/add.php';
     }
     function add()
     {
@@ -33,7 +43,7 @@ class ProductController
         $id = $_GET['id'];
         $obj1 = new Product();
         $pro = $obj1->getPro($id);
-        include 'app/views/product/update.php';
+        return $this->view->run('product.update', ['pr' => $pro]);
     }
     function editPro()
     {

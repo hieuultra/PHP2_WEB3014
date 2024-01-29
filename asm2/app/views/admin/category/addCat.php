@@ -41,7 +41,7 @@
                 <label for="hinhAnh" class="form-label">Image</label>
                 <input type="file" class="form-control" name="img" id="img">
             </div>
-            <button type="submit" class="btn btn-primary" name="save">Save</button>
+            <button type="submit" class="btn btn-primary" name="addCategory">Save</button>
             <a href="listCat" class="btn btn-primary ">List</a>
         </form>
     </div>

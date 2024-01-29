@@ -118,15 +118,15 @@
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
-                        <!-- <?php
-                                foreach ($dsdm as $dm) {
-                                    extract($dm);
-                                    $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
-                                    echo '
-  <a href="' . $linkdm . '" class="dropdown-item">' . $name_cat . '</a>
+                        <?php
+                        foreach ($listCat as $c) {
+                            extract($c);
+                            // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
+                            echo '
+  <a href="' . $linkdm . '" class="dropdown-item">' . $name . '</a>
   ';
-                                }
-                                ?> -->
+                        }
+                        ?>
                     </div>
                 </nav>
             </div>
