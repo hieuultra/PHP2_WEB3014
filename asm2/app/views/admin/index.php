@@ -69,8 +69,8 @@
 
                         <div class="collapse" id="collapseCate" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="category/listCat">List categories</a>
-                                <a class="nav-link" href="category/addCat">Add categories</a>
+                                <a class="nav-link" href="admin/category/listCat">List categories</a>
+                                <a class="nav-link" href="admin/category/addCat">Add categories</a>
                             </nav>
                         </div>
 
@@ -87,13 +87,13 @@
 
                         <div class="collapse" id="collapseProduct" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="category/listPro">List product</a>
-                                <a class="nav-link" href="category/addPro">Add product</a>
+                                <a class="nav-link" href="admin/category/listPro">List product</a>
+                                <a class="nav-link" href="admin/category/addPro">Add product</a>
                             </nav>
                         </div>
 
                         <!-- back to web -->
-                        <a class="nav-link collapsed" href="../index.php">
+                        <a class="nav-link collapsed" href="./">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-columns"></i>
                             </div>

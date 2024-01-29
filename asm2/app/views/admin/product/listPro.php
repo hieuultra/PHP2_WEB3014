@@ -48,9 +48,24 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <a href="../" class="btn btn-primary mb-3">Home Admin</a>
+        <a href="../" class="btn btn-primary mb-3" id="homeAdmin">Home Admin</a>
         <!-- Kết thúc Bảng Bootstrap -->
     </div>
+    <script>
+        document.getElementById('homeAdmin').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Lấy đường dẫn hiện tại
+            var currentPath = window.location.pathname;
+
+            // Tách đường dẫn để lấy phần "admin" (hoặc phần bạn muốn giữ nguyên)
+            var parts = currentPath.split('/');
+            var newPath = parts.slice(0, parts.indexOf('admin') + 1).join('/');
+
+            // Chuyển hướng trình duyệt đến đường dẫn mới
+            window.location.href = newPath;
+        });
+    </script>
 
     <!-- Bao gồm Bootstrap JS và Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
