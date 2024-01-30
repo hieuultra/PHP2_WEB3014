@@ -40,6 +40,11 @@
             <div class="mb-3">
                 <label for="hinhAnh" class="form-label">Image</label>
                 <input type="file" class="form-control" name="img" id="img">
+                <?php
+                echo (!empty($error_messages['img']['required'])) ? '<span style="color: red;">' . $error_messages['img']['required'] . '</span>' : false;
+                echo (!empty($error_messages['img']['format'])) ? '<span style="color: red;">' . $error_messages['img']['length'] . '</span>' : false;
+                echo (!empty($error_messages['img']['size'])) ? '<span style="color: red;">' . $error_messages['img']['size'] . '</span>' : false;
+                ?>
             </div>
             <button type="submit" class="btn btn-primary" name="addCategory">Save</button>
             <a href="listCat" class="btn btn-primary ">List</a>

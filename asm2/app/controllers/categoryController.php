@@ -26,7 +26,7 @@ class CategoryController
             $error['name']['required'] = 'Không được bỏ trống tên Cat';
         } else {
             if (strlen(trim($name)) < 5) {
-                $error['name']['length'] = 'Tên sản phẩm phải có ít nhất 3 ký tự';
+                $error['name']['length'] = 'Tên Cat phải có ít nhất 3 ký tự';
             }
         }
         // Validate ảnh sản phẩm $image
@@ -39,9 +39,9 @@ class CategoryController
             $imageInfo = getimagesize($img['tmp_name']);
 
             if (!$imageInfo || !in_array(strtolower(pathinfo($img['name'], PATHINFO_EXTENSION)), $allowedFormats)) {
-                $error['image']['format'] = 'Ảnh  phải là định dạng (jpg, jpeg, png)';
+                $error['img']['format'] = 'Ảnh  phải là định dạng (jpg, jpeg, png)';
             } elseif ($img['size'] > $maxFileSize) {
-                $error['image']['size'] = 'Ảnh không được nặng hơn 5MB';
+                $error['img']['size'] = 'Ảnh không được nặng hơn 5MB';
             }
         }
         // Kiểm tra nếu có lỗi

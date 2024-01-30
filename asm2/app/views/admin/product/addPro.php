@@ -59,7 +59,7 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Discount</label>
-                <input type="number" class="form-control" id="discount" name="discount" placeholder="Nhập discount">
+                <input type="text" class="form-control" id="discount" name="discount" placeholder="Nhập discount">
                 <!-- <?php
                         echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                         echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
@@ -74,7 +74,7 @@
                     <?php endforeach ?>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" name="save">Save</button>
+            <input type="submit" class="btn btn-primary" name="addProduct" value="Save">
             <a href="listPro" class="btn btn-primary ">List</a>
         </form>
     </div>
