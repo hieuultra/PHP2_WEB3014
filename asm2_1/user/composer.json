@@ -1,0 +1,11 @@
+{
+    "name": "hieu/mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "phroute/phroute": "^2.2"
+    }
+}
