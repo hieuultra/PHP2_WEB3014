@@ -25,28 +25,28 @@ class ProductController
         $error = [];
 
         // Validate sản phẩm $name 
-        // if (empty(trim($name))) {
-        //     $error['name']['required'] = 'Không được bỏ trống tên Cat';
-        // } else {
-        //     if (strlen(trim($name)) < 5) {
-        //         $error['name']['length'] = 'Tên Cat phải có ít nhất 3 ký tự';
-        //     }
-        // }
-        // // Validate ảnh sản phẩm $image
-        // if (empty($img['name'])) {
-        //     $error['img']['required'] = 'Không được bỏ trống ảnh';
-        // } else {
-        //     $allowedFormats = ['jpg', 'jpeg', 'png']; // Thêm các định dạng ảnh hỗ trợ
-        //     $maxFileSize = 5 * 1024 * 1024; // 5MB
+        if (empty(trim($name))) {
+            $error['name']['required'] = 'Không được bỏ trống tên Cat';
+        } else {
+            if (strlen(trim($name)) < 5) {
+                $error['name']['length'] = 'Tên Cat phải có ít nhất 3 ký tự';
+            }
+        }
+        // Validate ảnh sản phẩm $image
+        if (empty($img['name'])) {
+            $error['img']['required'] = 'Không được bỏ trống ảnh';
+        } else {
+            $allowedFormats = ['jpg', 'jpeg', 'png']; // Thêm các định dạng ảnh hỗ trợ
+            $maxFileSize = 5 * 1024 * 1024; // 5MB
 
-        //     $imageInfo = getimagesize($img['tmp_name']);
+            $imageInfo = getimagesize($img['tmp_name']);
 
-        //     if (!$imageInfo || !in_array(strtolower(pathinfo($img['name'], PATHINFO_EXTENSION)), $allowedFormats)) {
-        //         $error['img']['format'] = 'Ảnh  phải là định dạng (jpg, jpeg, png)';
-        //     } elseif ($img['size'] > $maxFileSize) {
-        //         $error['img']['size'] = 'Ảnh không được nặng hơn 5MB';
-        //     }
-        // }
+            if (!$imageInfo || !in_array(strtolower(pathinfo($img['name'], PATHINFO_EXTENSION)), $allowedFormats)) {
+                $error['img']['format'] = 'Ảnh  phải là định dạng (jpg, jpeg, png)';
+            } elseif ($img['size'] > $maxFileSize) {
+                $error['img']['size'] = 'Ảnh không được nặng hơn 5MB';
+            }
+        }
         // Kiểm tra nếu có lỗi
         if (!empty($error)) {
             // Xử lý lỗi theo ý bạn, có thể trả về mảng $error để hiển thị thông báo lỗi cho người dùng

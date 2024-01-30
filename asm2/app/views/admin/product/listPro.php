@@ -36,7 +36,7 @@
                     <tr>
                         <td><?= $c['id'] ?></td>
                         <td><?= $c['name'] ?></td>
-                        <td><img src="<?= $c['img'] ?>" alt="" width="60" height="70"></td>
+                        <td><img src="<?= $c['img'] ?>" alt="?" width="60" height="70"></td>
                         <td><?= $c['description'] ?></td>
                         <td><?= $c['price'] ?></td>
                         <td><?= $c['discount'] ?></td>
