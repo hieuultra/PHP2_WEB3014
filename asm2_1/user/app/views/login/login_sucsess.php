@@ -92,10 +92,10 @@
                                             <?php if ($id_role == 1) { ?>
                                                 <li><a href="act=mybill">My order </a></li>
                                             <?php } ?>
-                                            <li> <a href="forgot_password">Forgot password?</a></li>
-                                            <li> <a href="edit_account">Edit account </a> </li>
+                                            <li> <a href="viewForgotPassword">Forgot password?</a></li>
+                                            <li> <a href="viewEditAcc">Edit account </a> </li>
                                             <?php if ($id_role == 2) { ?>
-                                                <li> <a href="./">Login admin </a></li>
+                                                <li> <a href="../admin">Login admin </a></li>
                                             <?php } ?>
                                             <li> <a href="logOut">Log out </a></li>
                                         </div>

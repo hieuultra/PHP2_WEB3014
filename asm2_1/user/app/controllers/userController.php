@@ -109,4 +109,48 @@ class UserController
         session_unset();
         echo "<script>window.location.href='login';</script>";
     }
+    function viewForgotPassword()
+    {
+        require_once './app/views/forgotPassword/forgot-password.php';
+    }
+    function forgotPassword()
+    {
+        if (isset($_POST['send_email'])) {
+            $acc = new Account();
+            $result = $acc->check_email($_POST['email']);
+            if (is_array($result)) {
+                $tbao = "Your password is:" . $result['password'];
+                echo "<script>alert('$tbao');</script>";
+                echo "<script>window.location.href='viewForgotPassword';</script>";
+            } else {
+                $tbao = "Email undefind!";
+                echo "<script>alert('$tbao');</script>";
+                echo "<script>window.location.href='viewForgotPassword';</script>";
+            }
+        }
+    }
+    function viewEditAcc()
+    {
+        require_once './app/views/account/edit_account.php';
+    }
+    function editAcc()
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        if (isset($_POST['edit'])) {
+            $acc = new Account();
+            $result = $acc->edit_account(
+                $id,
+                $_POST['username'],
+                $_POST['password'],
+                $_POST['email'],
+                $_POST['address'],
+                $_POST['phone'],
+                $_FILES['img']
+            );
+            $acc = new Account();
+            $_SESSION['auth'] = $acc->check_user($_POST['username'], $_POST['password']); // sau khi edit xong thi edit lai $_SESSION['user'] moi
+            echo "<script>alert('Edit success!');</script>";
+            echo "<script>window.location.href='viewEditAcc';</script>";
+        }
+    }
 }

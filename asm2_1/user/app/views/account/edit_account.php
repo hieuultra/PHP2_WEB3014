@@ -1,3 +1,14 @@
+<?php
+if (is_array($_SESSION['auth'])) {
+    extract($_SESSION['auth']);
+}
+$hinhpath = "./upload/" . $img;
+if (is_file($hinhpath)) {
+    $hinh = "<img src='" . $hinhpath . "' height='70'>";
+} else {
+    $hinh = "No photo";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,19 +19,10 @@
     <meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template" />
     <meta name="author" content="Bootlab" />
 
-    <title>Sign In - AppStack - Admin &amp; Dashboard Template</title>
+    <title>Edit Account - AppStack - Admin &amp; Dashboard Template</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
 </head>
-<style>
-    label.error {
-        color: red;
-    }
-
-    .tbao {
-        color: red;
-    }
-</style>
 
 <body>
     <marquee behavior="scroll" direction="left" scrollamount="5">
@@ -51,64 +53,54 @@
         </div>
     </div>
     <main class="main d-flex w-100 mt-5">
-        <div class="container d-flex flex-column mt-5">
+        <div class="container d-flex flex-column">
             <div class="row h-100">
                 <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
                     <div class="d-table-cell align-middle">
                         <div class="text-center mt-4">
-                            <h1 class="h2">Account</h1>
+                            <h1 class="h2">Edit Account</h1>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <div class="m-sm-4">
-                                    <div class="text-center">
-                                        <!-- <img src="" alt="logo" class="img-fluid rounded-circle" width="132" height="132" /> -->
-                                        <h1 class="m-0 display-5 font-weight-semi-bold">
-                                            <span class="text-primary font-weight-bold border px-3 mr-1">Ultra</span>Shop
-                                        </h1>
-                                    </div>
                                     <?php
                                     if (isset($_SESSION['auth']) && (is_array($_SESSION['auth']))) {
                                         extract($_SESSION['auth']);
                                     }
                                     ?>
-                                    <div class="text-center mt-4 font-weight-bold border px-3 mr-1">
-                                        HELLO <br />
-                                        <?= $username ?>
-                                    </div>
-                                    <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px">
-                                        <?php
-                                        $hinhpath = "./upload/" . $img;
-                                        if (is_file($hinhpath)) {
-                                            $hinh = "<img src='" . $hinhpath . "' height='170'>";
-                                        } else {
-                                            $hinh = "No photo";
-                                        }
-                                        ?>
-                                        <?= $hinh ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <?php if ($id_role == 1) { ?>
-                                            <li><a href="act=mybill">My order </a></li>
-                                        <?php } ?>
-                                        <li> <a href="viewForgotPassword">Forgot password?</a></li>
-                                        <li> <a href="viewEditAcc">Edit account </a> </li>
-                                        <?php if ($id_role == 2) { ?>
-                                            <li> <a href="../admin">Login admin </a></li>
-                                        <?php } ?>
-                                        <li> <a href="logOut">Log out </a></li>
-                                    </div>
+                                    <form action="editAcc&id=<?= $id ?>" method="post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <input type="hidden" name="id" value="<?= $id_user ?>">
+                                            <label>Username</label>
+                                            <input class="form-control form-control-lg" type="text" name="username" value="<?= $username ?>" />
+                                            <label>Password</label>
+                                            <input class="form-control form-control-lg" type="text" name="password" value="<?= $password ?>" />
+                                            <label>Email</label>
+                                            <input class="form-control form-control-lg" type="email" name="email" value="<?= $email ?>" />
+                                            <label>Address</label>
+                                            <input class="form-control form-control-lg" type="text" name="address" value="<?= $address ?>" />
+                                            <label>Phone</label>
+                                            <input class="form-control form-control-lg" type="text" name="phone" value="<?= $phone ?>" />
+                                            <label>Image</label>
+                                            <input class="form-control form-control-lg" type="file" name="img" value="<?= $hinh ?>" />
+                                            <?= $hinh ?>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <input type="submit" href="#" class="btn btn-lg btn-primary" value="Edit" name="edit">
+                                            <!-- <button type="submit" class="btn btn-lg btn-primary">Reset password</button> -->
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <h2 class="tbao">
+                        <div style="color: red;">
                             <?php
-                            if (isset($tbao) && ($tbao) != "") {
-                                echo $tbao;
+                            if (isset($tb) && ($tb) != "") {
+                                echo $tb;
                             }
                             ?>
-                        </h2>
+                        </div>
                     </div>
                 </div>
             </div>
