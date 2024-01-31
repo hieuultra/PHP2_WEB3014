@@ -12,4 +12,9 @@ class Account extends DB
      values('$username','$password','$email','$address','$phone','$img')";
         return $this->getData($sql, false);
     }
+    function check_user($username, $password)
+    {
+        $sql = "select * from account where username='" . $username . "' AND password='" . $password . "'";
+        return $this->getData($sql, false);
+    }
 }
