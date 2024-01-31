@@ -27,7 +27,10 @@ $router->get('listCat', function () {
 $router->get('signUp', [App\Controllers\UserController::class, 'signUp']);
 $router->post('signUpp', [App\Controllers\UserController::class, 'signUpp']);
 $router->get('login', [App\Controllers\UserController::class, 'login']);
-
+$router->post('checkLogin', [App\Controllers\UserController::class, 'checkLogin']);
+$router->get('loginSuccess', [App\Controllers\UserController::class, 'loginSuccess']);
+$router->get('account', [App\Controllers\UserController::class, 'account']);
+$router->get('logOut', [App\Controllers\UserController::class, 'logOut']);
 
 
 

@@ -97,7 +97,7 @@
                       <span class="text-primary font-weight-bold border px-3 mr-1">Ultra</span>Shop
                     </h1>
                   </div>
-                  <form action="login" method="post" id="demoForm">
+                  <form action="checkLogin" method="post" id="demoForm">
                     <div class="form-group">
                       <label>Username</label>
                       <input class="form-control form-control-lg" type="text" name="username" placeholder="Enter your username" />
@@ -122,7 +122,7 @@
                       </div>
                     </div>
                     <div class="text-center mt-3">
-                      <input type="submit" href="#" class="btn btn-lg btn-primary" value="Sign in" name="dangnhap">
+                      <input type="submit" href="#" class="btn btn-lg btn-primary" value="Sign in" name="login">
                       <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                     </div>
                   </form>

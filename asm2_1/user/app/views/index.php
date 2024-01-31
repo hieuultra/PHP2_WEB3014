@@ -172,9 +172,9 @@
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                             <?php
-                            if (isset($_SESSION['user'])) {
+                            if (isset($_SESSION['auth'])) {
                             ?>
-                                <a href="login" class="btn px-0">
+                                <a href="account" class="btn px-0">
                                     <i class="fa-regular fa-user text-primary"></i>
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"></span>
                                 </a>

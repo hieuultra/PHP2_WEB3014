@@ -2,11 +2,14 @@
 
 namespace App\controllers;
 
+session_start();
+
 use App\Models\Account;
 use App\Models\Category;
 
 class UserController
 {
+
     function userIndex()
     {
         require_once './app/views/index.php';
@@ -16,10 +19,6 @@ class UserController
         $obj = new Category();
         $listCat = $obj->getAllCategory();
         require_once 'app/views/index.php';
-    }
-    function login()
-    {
-        require_once './app/views/login/login.php';
     }
     function signUp()
     {
@@ -77,5 +76,37 @@ class UserController
             echo '<script>alert("Please enter full input!")</script>';
             echo "<script>window.location.href='signUp';</script>";
         }
+    }
+    function login()
+    {
+        require_once './app/views/login/login.php';
+    }
+    function checkLogin()
+    {
+        if (isset($_POST['login'])) {
+            $acc = new Account();
+            $result = $acc->check_user($_POST['username'], $_POST['password']);
+            if (is_array($result)) {
+                $_SESSION['auth'] = $result;
+                echo '<script>alert("Login success!")</script>';
+                echo "<script>window.location.href='loginSuccess';</script>";
+            } else {
+                echo '<script>alert("Username or password is wrong!")</script>';
+                echo "<script>window.location.href='login';</script>";
+            }
+        }
+    }
+    function loginSuccess()
+    {
+        require_once './app/views/login/login_sucsess.php';
+    }
+    function account()
+    {
+        require_once './app/views/account/account.php';
+    }
+    function logOut()
+    {
+        session_unset();
+        echo "<script>window.location.href='login';</script>";
     }
 }
