@@ -17,17 +17,17 @@ $router->filter('auth', function () {
 
 // bắt đầu định nghĩa ra các đường dẫn
 $router->get('/', function () {
-    return (new App\Controllers\ProductController())->listProduct();
+    return (new App\Controllers\GuestController())->listGuest();
 });
 
 
 //định nghĩa đường dẫn trỏ đến Product Controller
-$router->get('list', [App\Controllers\ProductController::class, 'listProduct']);
-$router->get('addProduct', [App\Controllers\ProductController::class, 'addProduct']);
-$router->post('add', [App\Controllers\ProductController::class, 'add']);
-$router->get('viewUpdate', [App\Controllers\ProductController::class, 'viewUpdate']);
-$router->post('editPro', [App\Controllers\ProductController::class, 'editPro']);
-$router->get('delete', [App\Controllers\ProductController::class, 'delete']);
+$router->get('list', [App\Controllers\GuestController::class, 'listGuest']);
+$router->get('addGuest', [App\Controllers\GuestController::class, 'addGuest']);
+$router->post('add', [App\Controllers\GuestController::class, 'add']);
+$router->get('viewUpdate', [App\Controllers\GuestController::class, 'viewUpdate']);
+$router->post('editGuest', [App\Controllers\GuestController::class, 'editGuest']);
+$router->get('delete', [App\Controllers\GuestController::class, 'delete']);
 
 
 
