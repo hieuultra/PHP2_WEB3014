@@ -119,14 +119,14 @@
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
                         <!-- <?php
-                        foreach ($listCat as $c) {
-                            extract($c);
-                            // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
-                            echo '
+                                foreach ($listCat as $c) {
+                                    extract($c);
+                                    // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
+                                    echo '
   <a href="' . $linkdm . '" class="dropdown-item">' . $name . '</a>
   ';
-                        }
-                        ?> -->
+                                }
+                                ?> -->
                     </div>
                 </nav>
             </div>
@@ -171,21 +171,21 @@
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
-                            <!-- <?php
-                                    if (isset($_SESSION['user'])) {
-                                    ?>
-                                <a href="?act=account" class="btn px-0">
-                                    <i class="far fa-app/user text-primary"></i>
+                            <?php
+                            if (isset($_SESSION['user'])) {
+                            ?>
+                                <a href="login" class="btn px-0">
+                                    <i class="fa-regular fa-user text-primary"></i>
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"></span>
                                 </a>
                             <?php
-                                    } else {
+                            } else {
                             ?>
-                                <a href="?act=login" class="btn px-0">
-                                    <i class="far fa-app/user text-primary"></i>
+                                <a href="login" class="btn px-0">
+                                    <i class="fa-regular fa-user text-primary"></i>
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"></span>
                                 </a>
-                            <?php } ?> -->
+                            <?php } ?>
                             <a href="?act=mybill" class="btn px-0">
                                 <i class="fas fa-file-invoice-dollar text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
@@ -550,8 +550,8 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src=".app/lib/easing/easing.min.js"></script>
-    <script src=".app/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="./app/lib/easing/easing.min.js"></script>
+    <script src="./app/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="./app/views/mail/jqBootstrapValidation.min.js"></script>

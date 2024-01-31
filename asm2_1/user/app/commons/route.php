@@ -23,9 +23,10 @@ $router->get('/', function () {
 $router->get('listCat', function () {
     return (new App\Controllers\UserController())->listCat();
 });
-//định nghĩa đường dẫn trỏ đến category Controller
-$router->get('admin/category/listCat', [App\Controllers\CategoryController::class, 'listCat']);
-//định nghĩa đường dẫn trỏ đến Product Controller
+//định nghĩa đường dẫn trỏ đến user Controller
+$router->get('signUp', [App\Controllers\UserController::class, 'signUp']);
+$router->post('signUpp', [App\Controllers\UserController::class, 'signUpp']);
+$router->get('login', [App\Controllers\UserController::class, 'login']);
 
 
 
