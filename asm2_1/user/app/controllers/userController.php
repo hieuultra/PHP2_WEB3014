@@ -2,6 +2,8 @@
 
 namespace App\controllers;
 
+use Product;
+
 session_start();
 
 use App\Models\Account;
@@ -14,6 +16,8 @@ class UserController
     {
         $obj = new Category();
         $listC = $obj->getAllCategory();
+        $obj1 = new Product();
+        $listP = $obj1->getAllProduct();
         require_once './app/views/index.php';
     }
     function signUp()
