@@ -20,10 +20,8 @@ $router->filter('auth', function () {
 $router->get('/', function () {
     return (new App\Controllers\UserController())->userIndex();
 });
-$router->get('listCat', function () {
-    return (new App\Controllers\UserController())->listCat();
-});
 //định nghĩa đường dẫn trỏ đến user Controller
+// $router->get('#navbar-vertical', [App\Controllers\UserController::class, 'listCat']);
 $router->get('signUp', [App\Controllers\UserController::class, 'signUp']);
 $router->post('signUpp', [App\Controllers\UserController::class, 'signUpp']);
 $router->get('login', [App\Controllers\UserController::class, 'login']);

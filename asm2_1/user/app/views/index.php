@@ -118,15 +118,15 @@
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
-                        <!-- <?php
-                                foreach ($listCat as $c) {
-                                    extract($c);
-                                    // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
-                                    echo '
+                        <?php
+                        foreach ($listC as $c) {
+                            extract($c);
+                            // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
+                            echo '
   <a href="' . $linkdm . '" class="dropdown-item">' . $name . '</a>
   ';
-                                }
-                                ?> -->
+                        }
+                        ?>
                     </div>
                 </nav>
             </div>
@@ -320,12 +320,26 @@
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
+            <?php foreach ($listC as $ds) :    extract($ds);
+                // $hinh = $img_path . $img; ?>
+                <div class="col-lg-2 col-md-6 pb-1">
+                    <a class="text-decoration-none" href="">
+                        <div class="cat-item d-flex align-items-center mb-4">
+                            <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                                <a href="' . $linkdm . '"> <img class="img-fluid" src="<?= $hinh ?>" alt=""></a>
+                            </div>
+                            <div class="flex-fill pl-3">
+                                <h6><?= $name ?></h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
 
-            <!-- foreach ($dsdm as $ds) {
+            <!-- foreach ($listC as $ds) {
       extract($ds);
-      $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
-      $hinh = $img_path . $img_cat;
-      $countsp = loadall_pro_count($ds['id_cat']);
+      $linkdm = "product_cat&id_cat=" . $id_cat;
+      $hinh = $img_path . $img;
       echo '   <div class="col-lg-2 col-md-6 pb-1">
         <a class="text-decoration-none" href="">
         <div class="cat-item d-flex align-items-center mb-4">
@@ -333,15 +347,12 @@
             <a href="' . $linkdm . '">  <img class="img-fluid" src="' . $hinh . '" alt=""></a>
             </div>
             <div class="flex-fill pl-3">
-                <h6>' . $name_cat . '</h6>
-                <small class="text-body">' . $countsp . ' Products</small>
+                <h6>' . $name . '</h6>
             </div>
         </div>
     </a>
     </div>';
-    }
-    -->
-
+    } -->
         </div>
     </div>
     <!-- Categories End -->

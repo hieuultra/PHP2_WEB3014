@@ -30,7 +30,7 @@
         <form action="addProduct" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="tenSanPham" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên" required>
                 <!-- <?php
                         echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                         echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
@@ -39,11 +39,11 @@
 
             <div class="mb-3">
                 <label for="hinhAnh" class="form-label">Image</label>
-                <input type="file" class="form-control" name="img" id="img">
+                <input type="file" class="form-control" name="img" id="img" required>
             </div>
             <div class="mb-3">
                 <label for="des" class="form-label">Description</label>
-                <textarea name="description" id="description" cols="162" rows="3"></textarea>
+                <textarea name="description" id="description" cols="162" rows="3" required></textarea>
                 <!-- <?php
                         echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                         echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
@@ -51,7 +51,7 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" id="price" name="price" placeholder="Nhập price">
+                <input type="text" class="form-control" id="price" name="price" placeholder="Nhập price" required>
                 <!-- <?php
                         echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                         echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
@@ -59,7 +59,7 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Discount</label>
-                <input type="text" class="form-control" id="discount" name="discount" placeholder="Nhập discount">
+                <input type="text" class="form-control" id="discount" name="discount" placeholder="Nhập discount" required>
                 <!-- <?php
                         echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                         echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;

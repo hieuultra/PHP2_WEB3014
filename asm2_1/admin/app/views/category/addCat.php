@@ -30,7 +30,7 @@
         <form action="addCategory" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="tenSanPham" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên" required>
                 <?php
                 echo (!empty($error_messages['name']['required'])) ? '<span style="color: red;">' . $error_messages['name']['required'] . '</span>' : false;
                 echo (!empty($error_messages['name']['length'])) ? '<span style="color: red;">' . $error_messages['name']['length'] . '</span>' : false;
@@ -39,7 +39,7 @@
 
             <div class="mb-3">
                 <label for="hinhAnh" class="form-label">Image</label>
-                <input type="file" class="form-control" name="img" id="img">
+                <input type="file" class="form-control" name="img" id="img" required>
                 <?php
                 echo (!empty($error_messages['img']['required'])) ? '<span style="color: red;">' . $error_messages['img']['required'] . '</span>' : false;
                 echo (!empty($error_messages['img']['format'])) ? '<span style="color: red;">' . $error_messages['img']['length'] . '</span>' : false;
