@@ -28,11 +28,17 @@
         </tr>
       </thead>
       <tbody>
+      <!-- $hinhpath = "./app/public/image/" . $c['img'];
+          if (is_file($hinhpath)) {
+            $hinh = "<img src='" . $hinhpath . "' height='100' width='100'>";
+          } else {
+            $hinh = "No photo";
+          } -->
         <?php foreach ($cat as $c) : ?>
           <tr>
             <td><?= $c['id'] ?></td>
             <td><?= $c['name'] ?></td>
-            <td><img src="<?= $c['img'] ?>" width="60" height="70"></td>
+            <td><img src="<?= $c['img'] ?>" width="60" height="70" alt=""></td>
             <td><a href="viewUpdateCat&id=<?= $c['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
             <td><a onclick="return confirm('you want delete sure?')" href="hard_delete_cat&id=<?= $c['id'] ?>" class="btn btn-danger">Hard delete</a></td>
             <td><a onclick="return confirm('you want delete sure?')" href="soft_delete_cat&id=<?= $c['id'] ?>" class="btn btn-danger">Soft delete</a></td>

@@ -48,8 +48,19 @@ class CategoryController
         if (!empty($error)) {
             // Xử lý lỗi theo ý bạn, có thể trả về mảng $error để hiển thị thông báo lỗi cho người dùng
             $_SESSION['error_messages'] = $error;
+            // } else {
+            //     $imgName = $_FILES['img']['name'];
+            //     $target_dir = "./app/public/image/";
+            //     $target_file = $target_dir . basename($imgName);
+            //     if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+            //         $cat = new Category();
+            //         $cat->insertCat($name, $imgName);
+            //     } else {
+            //         // Xử lý lỗi, có thể lưu trong $_SESSION hoặc ghi log
+            //         $_SESSION['error_messages'][] = 'Xin lỗi, đã có lỗi khi tải lên tập tin của bạn.';
+            //     }
         } else {
-            $targetDir = "./app/public/image/";
+            $targetDir = "app/public/image/";
             $targetFile = $targetDir . $img['name'];
             if (move_uploaded_file($img['tmp_name'], $targetFile)) {
                 $imgUrl = $targetFile;
@@ -58,6 +69,7 @@ class CategoryController
             }
         }
     }
+
     function addCategory()
     {
         if (isset($_POST['addCategory']))
