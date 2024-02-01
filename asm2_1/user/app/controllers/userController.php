@@ -19,6 +19,10 @@ class UserController
         $listP = $obj1->getAllProduct();
         require_once './app/views/index.php';
     }
+    function detailPro()
+    {
+        require_once './app/views/detailPro/detail.php';
+    }
     function signUp()
     {
         require_once './app/views/signUp/pages-sign-up.php';

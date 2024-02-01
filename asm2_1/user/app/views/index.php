@@ -412,13 +412,13 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="' . $linksp . '"> <img class="img-fluid w-300" src="' . $hinh . '" alt="" id="img" /></a>
+                            <a href="<?= $linksp ?>"> <img class="img-fluid w-300" src="<?= $hinh ?>" alt="" id="img" /></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                             <div class="product-action">
                                 <form action="wishlist" method="post">
                                     <input type="hidden" name="id" value="<?= $id ?>">
-                                    <input type="hidden" name="name_pro" value="<?= $name ?>">
+                                    <input type="hidden" name="name" value="<?= $name ?>">
                                     <input type="hidden" name="img" value="<?= $img ?>">
                                     <input type="hidden" name="price" value="<?= $price ?>">
                                     <input type="hidden" name="discount" value="<?= $discount ?>">
@@ -443,13 +443,13 @@
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="' . $linksp . '" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <form action="index.php?act=addtocart" method="post">
-                                <input type="hidden" name="id_pro" value="' . $id_pro . '">
-                                <input type="hidden" name="name_pro" value="' . $name_pro . '">
-                                <input type="hidden" name="img" value="' . $img . '">
-                                <input type="hidden" name="price" value="' . $price . '">
-                                <input type="hidden" name="discount" value="' . $discount . '">
+                            <a href="<?= $linksp ?>" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <form action="addtocart" method="post">
+                                <input type="hidden" name="id" value="<?= $id ?>">
+                                <input type="hidden" name="name" value="<?= $name ?>">
+                                <input type="hidden" name="img" value="<?= $img ?>">
+                                <input type="hidden" name="price" value="<?= $price ?>">
+                                <input type="hidden" name="discount" value="<?= $discount ?>">
                                 <input type="submit" value="Add To Cart" class="btn btn-sm text-dark p-0" name="addtocart"><i class="fas fa-shopping-cart text-primary mr-1"></i>
                             </form>
                         </div>
