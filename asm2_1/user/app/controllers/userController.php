@@ -2,12 +2,11 @@
 
 namespace App\controllers;
 
-use Product;
-
 session_start();
 
 use App\Models\Account;
 use App\Models\Category;
+use App\Models\Product;
 
 class UserController
 {
