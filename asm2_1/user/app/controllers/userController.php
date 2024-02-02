@@ -26,6 +26,17 @@ class UserController
         $onePro = $obj->loadOnePro($id);
         require_once './app/views/detailPro/detail.php';
     }
+    function search_pro()
+    {
+        if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
+            $kyw = $_POST['kyw'];
+        } else {
+            $kyw = "";
+        }
+        $obj = new Product();
+        $spro = $obj->loadall_proo($kyw);
+        require_once './app/views/detailPro/search_pro.php';
+    }
     function signUp()
     {
         require_once './app/views/signUp/pages-sign-up.php';

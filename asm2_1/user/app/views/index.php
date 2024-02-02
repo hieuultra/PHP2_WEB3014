@@ -88,7 +88,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
-                <form action="index.php?act=search_pro" method="post">
+                <form action="search_pro" method="post">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for products [Enter]" name="kyw">
                         <div class="input-group-append">
@@ -121,7 +121,7 @@
                         <?php
                         foreach ($listC as $c) {
                             extract($c);
-                            // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
+                            $linkdm = "product_cat&id=" . $id;
                             echo '
   <a href="' . $linkdm . '" class="dropdown-item">' . $name . '</a>
   ';
@@ -408,10 +408,10 @@
         <div class="row px-xl-5 pb-3">
             <!-- Product -->
             <?php foreach ($listP as $s) :  extract($s);
-                $tt = $price - (($price * $discount) / 100);  
+                $tt = $price - (($price * $discount) / 100);
                 $hinh = "./app/public/image/" . $img;
                 $linksp = "pro_detail&id=" . $id;
-                ?>
+            ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">

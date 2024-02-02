@@ -16,6 +16,17 @@ class Product extends DB
         $sql = "select * from product where id=" . $id;
         return $this->getData($sql, false);
     }
+    function loadall_proo($kyw = "")
+    {
+        //cach noi chuoi sql
+        //phai co cach khoang
+        $sql = "select * from product where 1";
+        if ($kyw != "") {
+            $sql .= " and name like '%" . $kyw . "%' ";
+        }
+        $sql .= " order by id desc";
+        return $this->getData($sql);
+    }
     function insertPro($name, $img, $description, $price, $discount, $id_cat)
     {
         $sql = "insert into product(name,img, description,price,discount,id_cat)
