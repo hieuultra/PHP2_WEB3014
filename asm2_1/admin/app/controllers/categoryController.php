@@ -74,8 +74,8 @@ class CategoryController
     {
         if (isset($_POST['addCategory']))
             $this->addCate($_POST['name'], $_FILES['img']);
-            echo "<script>alert('Insert thanh cong')</script>";
-            echo "<script>window.location.href='listCat';</script>";
+        echo "<script>alert('Insert thanh cong')</script>";
+        echo "<script>window.location.href='listCat';</script>";
     }
     function viewUpdateCat()
     {
