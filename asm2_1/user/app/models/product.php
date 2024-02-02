@@ -11,6 +11,11 @@ class Product extends DB
         $sql = "select p.*,c.name as category_name from product p join category c on p.id_cat=c.id where p.status=1";
         return $this->getData($sql);
     }
+    function loadOnePro($id)
+    {
+        $sql = "select * from product where id=" . $id;
+        return $this->getData($sql, false);
+    }
     function insertPro($name, $img, $description, $price, $discount, $id_cat)
     {
         $sql = "insert into product(name,img, description,price,discount,id_cat)

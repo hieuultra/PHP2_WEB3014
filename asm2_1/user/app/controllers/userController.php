@@ -19,8 +19,11 @@ class UserController
         $listP = $obj1->getAllProduct();
         require_once './app/views/index.php';
     }
-    function detailPro()
+    function pro_detail()
     {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj = new Product();
+        $onePro = $obj->loadOnePro($id);
         require_once './app/views/detailPro/detail.php';
     }
     function signUp()

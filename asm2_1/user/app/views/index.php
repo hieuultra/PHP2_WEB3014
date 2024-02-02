@@ -408,7 +408,10 @@
         <div class="row px-xl-5 pb-3">
             <!-- Product -->
             <?php foreach ($listP as $s) :  extract($s);
-                $tt = $price - (($price * $discount) / 100); ?>
+                $tt = $price - (($price * $discount) / 100);  
+                $hinh = "./app/public/image/" . $img;
+                $linksp = "pro_detail&id=" . $id;
+                ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">

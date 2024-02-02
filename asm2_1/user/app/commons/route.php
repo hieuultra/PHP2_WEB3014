@@ -33,7 +33,8 @@ $router->get('viewForgotPassword', [App\Controllers\UserController::class, 'view
 $router->post('forgotPassword', [App\Controllers\UserController::class, 'forgotPassword']);
 $router->get('viewEditAcc', [App\Controllers\UserController::class, 'viewEditAcc']);
 $router->post('editAcc', [App\Controllers\UserController::class, 'editAcc']);
-$router->get('detailPro', [App\Controllers\UserController::class, 'detailPro']);
+$router->get('pro_detail', [App\Controllers\UserController::class, 'pro_detail']);
+
 
 
 # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
