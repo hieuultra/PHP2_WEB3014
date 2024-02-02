@@ -23,7 +23,7 @@
                 <div class="mb-3">
                     <label for="hinhAnh" class="form-label">Image</label>
                     <input type="file" class="form-control" name="img" id="img">
-                    <img src="<?= $cat['img'] ?>" alt="">
+                    <img src=".<?= $cat['img'] ?>" alt="" width="50">
                 </div>
 
 

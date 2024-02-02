@@ -84,12 +84,35 @@ class CategoryController
         $cat = $obj1->getCat($id);
         require_once './app/views/category/editCat.php';
     }
+    function updateCat($id, $name, $img)
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj1 = new Category();
+        $user = $obj1->getCat($id);
+        if ($img['size'] != 0) {
+            $targetDir = "./app/public/image/";
+            $targetFile = $targetDir . $img['name'];
+            if (move_uploaded_file($img['tmp_name'], $targetFile)) {
+                $imageUrl = $targetFile;
+            }
+        } else {
+            $imageUrl = $user['img'];
+        }
+        $check = $obj1->update($id, $name, $imageUrl);
+        if (!$check) {
+            echo '<script>alert("Cap nhat thành công")</script>';
+            echo '<script>window.location.href = "index.php";</script>';
+        } else {
+            echo '<script>alert("Cap nhat that bai")</script>';
+            echo '<script>window.location.href = "index.php";</script>';
+        }
+    }
     function editCat()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $obj1 = new Category();
         $cat = $obj1->getCat($id);
-        $check = $obj1->update($id, $_POST['name']);
+        $check = $this->updateCat($id, $_POST['name'], $_FILES['img']);
         if (!$check) {
             echo "<script>alert('cap nhap thanh cong')</script>";
             echo "<script>window.location.href='listCat';</script>";

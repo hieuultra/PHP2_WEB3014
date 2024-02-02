@@ -185,15 +185,7 @@
                                         <?= $username ?>
                                     </div>
                                     <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px">
-                                        <?php
-                                        $hinhpath = "./upload/" . $img;
-                                        if (is_file($hinhpath)) {
-                                            $hinh = "<img src='" . $hinhpath . "' height='170'>";
-                                        } else {
-                                            $hinh = "No photo";
-                                        }
-                                        ?>
-                                        <?= $hinh ?>
+                                     <img src="<?= $img ?>" alt="" width="400" height="200">
                                     </div>
                                     <div class="form-group">
                                         <?php if ($id_role == 1) { ?>

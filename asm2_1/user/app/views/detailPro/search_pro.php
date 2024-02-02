@@ -193,38 +193,35 @@
     <div class="row px-xl-5 pb-3">
         <!-- Product -->
         <?php
-        foreach ($spro as $s) {
-            extract($s);
-            $linksp = "pro_detail&id=" . $id;
-            $tt = $price - (($price * $discount) / 100);
-            $hinh = './app/public/image/' . $img;
-            echo '<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-     <div class="card product-item border-0 mb-4">
-       <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-       <a href="' . $linksp . '">  <img class="img-fluid w-300" src="' . $hinh . '" alt="" id="img" /></a>
-       </div>
-       <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-         <h6 class="text-truncate mb-3">' . $name . '</h6>
-         <div class="d-flex justify-content-center">
-           <h6>' . number_format($tt, 0, ",", ".") . '$' . '</h6>
-           <h6 class="text-muted ml-2"><del>' . number_format($price, 0, ",", ".") . '$' . '</del></h6>
-         </div>
-       </div>
-       <div class="card-footer d-flex justify-content-between bg-light border">
-         <a href="' . $linksp . '" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-         <form action="index.php?act=addtocart" method="post">
-         <input type="hidden" name="id_pro" value="' . $id . '">
-         <input type="hidden" name="name_pro" value="' . $name . '">
-         <input type="hidden" name="img" value="' . $img . '">
-         <input type="hidden" name="price" value="' . $price . '">
-         <input type="hidden" name="discount" value="' . $discount . '">
-         <input type="submit" value="Add To Cart" class="btn btn-sm text-dark p-0" name="addtocart"><i class="fas fa-shopping-cart text-primary mr-1"></i>
-       </form>
-       </div>
-     </div>
-   </div>';
-        }
-        ?>
+        foreach ($spro as $s) :   $linksp = "pro_detail&id=" . $s['id'];
+            $tt = $s['price'] - (($s['price'] * $s['discount']) / 100); ?>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <a href="<?= $linksp ?>"> <img class="img-fluid w-300" src="<?= $s['img'] ?>" alt="" id="img" /></a>
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3"><?= $s['name'] ?></h6>
+                        <div class="d-flex justify-content-center">
+                            <h6><?= number_format($tt, 0, ",", ".") . '$' ?></h6>
+                            <h6 class="text-muted ml-2"><del><?= number_format($s['price'], 0, ",", ".") . '$' ?></del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="' . $linksp . '" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" name="id_pro" value="' . $id . '">
+                            <input type="hidden" name="name_pro" value="' . $name . '">
+                            <input type="hidden" name="img" value="' . $img . '">
+                            <input type="hidden" name="price" value="' . $price . '">
+                            <input type="hidden" name="discount" value="' . $discount . '">
+                            <input type="submit" value="Add To Cart" class="btn btn-sm text-dark p-0" name="addtocart"><i class="fas fa-shopping-cart text-primary mr-1"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
 <!-- Products End -->

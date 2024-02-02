@@ -34,11 +34,12 @@
           } else {
             $hinh = "No photo";
           } -->
-        <?php foreach ($cat as $c) : ?>
+          <!-- <img src="../app/public/image/Minimalist Lace-up Front Chunky Sneakers.jpg" alt="img" > -->
+        <?php foreach ($cat as $c) :  ?>
           <tr>
             <td><?= $c['id'] ?></td>
             <td><?= $c['name'] ?></td>
-            <td><img src="<?= $c['img'] ?>" width="60" height="70" alt=""></td>
+            <td><img src=".<?= $c['img'] ?>" width="60" height="70" alt=""></td>
             <td><a href="viewUpdateCat&id=<?= $c['id'] ?>" class="btn btn-warning"><input type="button" value="Edit"></a></td>
             <td><a onclick="return confirm('you want delete sure?')" href="hard_delete_cat&id=<?= $c['id'] ?>" class="btn btn-danger">Hard delete</a></td>
             <td><a onclick="return confirm('you want delete sure?')" href="soft_delete_cat&id=<?= $c['id'] ?>" class="btn btn-danger">Soft delete</a></td>

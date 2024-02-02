@@ -320,17 +320,15 @@
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
-            <?php foreach ($listC as $ds) :    extract($ds);
-                // $hinh = $img_path . $img; 
-            ?>
+            <?php foreach ($listC as $ds) : ?>
                 <div class="col-lg-2 col-md-6 pb-1">
                     <a class="text-decoration-none" href="">
                         <div class="cat-item d-flex align-items-center mb-4">
                             <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                                <a href="' . $linkdm . '"> <img class="img-fluid" src="<?= $hinh ?>" alt=""></a>
+                                <a href="' . $linkdm . '"> <img class="img-fluid" src="<?= $ds['img'] ?>" alt=""></a>
                             </div>
                             <div class="flex-fill pl-3">
-                                <h6><?= $name ?></h6>
+                                <h6><?= $ds['name'] ?></h6>
                             </div>
                         </div>
                     </a>
@@ -407,15 +405,15 @@
 
         <div class="row px-xl-5 pb-3">
             <!-- Product -->
-            <?php foreach ($listP as $s) :  extract($s);
-                $tt = $price - (($price * $discount) / 100);
-                $hinh = "./app/public/image/" . $img;
-                $linksp = "pro_detail&id=" . $id;
+            <?php foreach ($listP as $s) : 
+                $tt = $s['price'] - (($s['price']  * $s['discount'] ) / 100);
+                // $hinh = "./app/public/image/" . $img;
+                $linksp = "pro_detail&id=" . $s['id'];
             ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <a href="<?= $linksp ?>"> <img class="img-fluid w-300" src="<?= $hinh ?>" alt="" id="img" /></a>
+                            <a href="<?= $linksp ?>"> <img class="img-fluid w-300" src="<?= $s['img'] ?>" alt="" id="img" /></a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                             <div class="product-action">
@@ -430,11 +428,11 @@
                                 </form>
                             </div>
                             <a href="<?= $linksp ?>">
-                                <h6 class="text-truncate mb-3"><?= $name ?></h6>
+                                <h6 class="text-truncate mb-3"><?= $s['name'] ?></h6>
                             </a>
                             <div class="d-flex justify-content-center">
                                 <h6><?= number_format($tt, 0, ",", ".") . '$' ?></h6>
-                                <h6 class="text-muted ml-2"><del><?= number_format($price, 0, ",", ".") . '$' ?></del></h6>
+                                <h6 class="text-muted ml-2"><del><?= number_format($s['price'], 0, ",", ".") . '$' ?></del></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>

@@ -21,9 +21,9 @@ class Category extends DB
         $sql = "select * from category where id = $id";
         return $this->getData($sql, false);
     }
-    function update($id, $name)
+    function update($id, $name, $img)
     {
-        $sql = "update category set name='" . $name . "' where id=" . $id;
+        $sql = "update category set name='" . $name . ",img='" . $img . "' where id= $id";
         return $this->getData($sql, false);
     }
     function hard_delete_cat($id)
