@@ -82,7 +82,7 @@
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
-                <a href="?act=home" class="text-decoration-none">
+                <a href="./" class="text-decoration-none">
                     <span class="h1 text-uppercase text-primary bg-dark px-2">Ultra</span>
                     <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
                 </a>
@@ -132,7 +132,7 @@
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
+                    <a href="./" class="text-decoration-none d-block d-lg-none">
                         <span class="h1 text-uppercase text-dark bg-light px-2">Ultra</span>
                         <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
                     </a>
@@ -141,8 +141,8 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="?act=home" class="nav-item nav-link active">Home</a>
-                            <a href="?act=shop" class="nav-item nav-link">Shop</a>
+                            <a href="./" class="nav-item nav-link active">Home</a>
+                            <a href="shop" class="nav-item nav-link">Shop</a>
 
                             <div class="nav-item dropdown">
                                 <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Brands</a>
