@@ -78,12 +78,35 @@ class ProductController
         $pro = $obj1->getPro($id);
         require_once 'app/views/product/editPro.php';
     }
+    function updatePro($id, $name, $img, $description, $price, $discount, $id_cat)
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj1 = new Product();
+        $pro = $obj1->getPro($id);
+        if ($img['size'] != 0) {
+            $targetDir = "./app/public/image/";
+            $targetFile = $targetDir . $img['name'];
+            if (move_uploaded_file($img['tmp_name'], $targetFile)) {
+                $imageUrl = $targetFile;
+            }
+        } else {
+            $imageUrl = $pro['img'];
+        }
+        $check = $obj1->update($id, $name, $imageUrl, $description, $price, $discount, $id_cat);
+        if (!$check) {
+            echo '<script>alert("Cap nhat thành công")</script>';
+            echo '<script>window.location.href = "listPro";</script>';
+        } else {
+            echo '<script>alert("Cap nhat that bai")</script>';
+            echo '<script>window.location.href = "listPro";</script>';
+        }
+    }
     function editPro()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $obj1 = new Product();
         $pro = $obj1->getPro($id);
-        $check = $obj1->update($id, $_POST['name'], $_FILES['img'], $_POST['description'], $_POST['price'], $_POST['discount'], $_POST['id_cat']);
+        $check = $this->updatePro($id, $_POST['name'], $_FILES['img'], $_POST['description'], $_POST['price'], $_POST['discount'], $_POST['id_cat']);
         if (!$check) {
             echo "<script>alert('cap nhap thanh cong')</script>";
             echo "<script>window.location.href='listPro';</script>";

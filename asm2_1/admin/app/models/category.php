@@ -23,7 +23,7 @@ class Category extends DB
     }
     function update($id, $name, $img)
     {
-        $sql = "update category set name='" . $name . ",img='" . $img . "' where id= $id";
+        $sql = "UPDATE category SET name='" . $name . "', img='" . $img . "' WHERE id=" . $id;
         return $this->getData($sql, false);
     }
     function hard_delete_cat($id)

@@ -28,13 +28,6 @@
         </tr>
       </thead>
       <tbody>
-      <!-- $hinhpath = "./app/public/image/" . $c['img'];
-          if (is_file($hinhpath)) {
-            $hinh = "<img src='" . $hinhpath . "' height='100' width='100'>";
-          } else {
-            $hinh = "No photo";
-          } -->
-          <!-- <img src="../app/public/image/Minimalist Lace-up Front Chunky Sneakers.jpg" alt="img" > -->
         <?php foreach ($cat as $c) :  ?>
           <tr>
             <td><?= $c['id'] ?></td>
