@@ -22,15 +22,15 @@ class Account extends DB
         $sql = "select * from account where email='" . $email . "'";
         return $this->getData($sql, false);
     }
+    function getAcc($id)
+    {
+        $sql = "select * from account where id='" . $id . "'";
+        return $this->getData($sql, false);
+    }
     function edit_account($id, $username, $password, $email, $address, $phone,  $img)
     {
-        if ($img != '') {
-            $sql = "update account set username='" . $username . "',password='" . $password . "', email='" . $email . "',
+        $sql = "update account set username='" . $username . "',password='" . $password . "', email='" . $email . "',
         address='" . $address . "',phone='" . $phone . "',img='" . $img . "' where id=" . $id;
-        } else {
-            $sql = "update account set username='" . $username . "',password='" . $password . "', email='" . $email . "',
-        address='" . $address . "',phone='" . $phone . "' where id=" . $id;
-        }
         return $this->getData($sql, false);
     }
 }

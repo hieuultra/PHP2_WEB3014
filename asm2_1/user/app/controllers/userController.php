@@ -7,9 +7,18 @@ session_start();
 use App\Models\Account;
 use App\Models\Category;
 use App\Models\Product;
+use eftec\bladeone\BladeOne;
 
 class UserController
 {
+    public $views;
+
+    function __construct()
+    {
+        $view = "app/views";
+        $cache = "app/cache";
+        $this->views = new BladeOne($view, $cache, BladeOne::MODE_AUTO);
+    }
 
     function userIndex()
     {
@@ -119,7 +128,8 @@ class UserController
     }
     function account()
     {
-        require_once './app/views/account/account.php';
+        // require_once './app/views/account/account.php';
+        return $this->views->run('account.account');
     }
     function logOut()
     {
@@ -150,12 +160,28 @@ class UserController
     {
         require_once './app/views/account/edit_account.php';
     }
+    function updateAcc($id, $username, $password, $email, $address, $phone,  $img)
+    {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $obj1 = new Account();
+        $acc = $obj1->getAcc($id);
+        if ($img['size'] != 0) {
+            $targetDir = "./app/public/image/";
+            $targetFile = $targetDir . $img['name'];
+            if (move_uploaded_file($img['tmp_name'], $targetFile)) {
+                $imageUrl = $targetFile;
+            }
+        } else {
+            $imageUrl = $acc['img'];
+        }
+        $obj1->edit_account($id, $username, $password, $email, $address, $phone,  $imageUrl);
+    }
     function editAcc()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         if (isset($_POST['edit'])) {
             $acc = new Account();
-            $result = $acc->edit_account(
+            $result = $this->updateAcc(
                 $id,
                 $_POST['username'],
                 $_POST['password'],

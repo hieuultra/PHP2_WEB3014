@@ -1,14 +1,3 @@
-<?php
-if (is_array($_SESSION['auth'])) {
-    extract($_SESSION['auth']);
-}
-$hinhpath = "./upload/" . $img;
-if (is_file($hinhpath)) {
-    $hinh = "<img src='" . $hinhpath . "' height='70'>";
-} else {
-    $hinh = "No photo";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +9,8 @@ if (is_file($hinhpath)) {
     <meta name="author" content="Bootlab" />
 
     <title>Edit Account - AppStack - Admin &amp; Dashboard Template</title>
-        <!-- fontawesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Favicon -->
     <link href="./app/img/favicon.ico" rel="icon" />
 
@@ -70,8 +59,8 @@ if (is_file($hinhpath)) {
             <h5 class="m-0">+012 345 6789</h5>
         </div>
     </div>
-     <!-- Navbar Start -->
-     <div class="container-fluid bg-dark mb-30">
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
@@ -178,7 +167,7 @@ if (is_file($hinhpath)) {
                                     ?>
                                     <form action="editAcc&id=<?= $id ?>" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <input type="hidden" name="id" value="<?= $id_user ?>">
+                                            <input type="hidden" name="id" value="<?= $id ?>">
                                             <label>Username</label>
                                             <input class="form-control form-control-lg" type="text" name="username" value="<?= $username ?>" />
                                             <label>Password</label>
@@ -190,8 +179,8 @@ if (is_file($hinhpath)) {
                                             <label>Phone</label>
                                             <input class="form-control form-control-lg" type="text" name="phone" value="<?= $phone ?>" />
                                             <label>Image</label>
-                                            <input class="form-control form-control-lg" type="file" name="img" value="<?= $hinh ?>" />
-                                            <?= $hinh ?>
+                                            <input class="form-control form-control-lg" type="file" name="img" value="" />
+                                            <img src="<?= $img ?>" alt="" width="70" height="60">
                                         </div>
                                         <div class="text-center mt-3">
                                             <input type="submit" href="#" class="btn btn-lg btn-primary" value="Edit" name="edit">
