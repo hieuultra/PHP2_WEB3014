@@ -37,11 +37,11 @@ class UserController
     }
     function product_cat()
     {
-        $id_cat = isset($_GET['id_cat']) ? $_GET['id_cat'] : null;
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
         $obj = new Product();
-        $proCat = $obj->getProCat($id_cat);
+        $proCat = $obj->getProCat($id);
         $obj1 = new Category();
-        $listC = $obj1->getAllCategory();
+        $listC = $obj1->getNameCat($id);
         require_once './app/views/proCat/product_cat.php';
     }
     function search_pro()

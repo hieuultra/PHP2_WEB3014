@@ -321,7 +321,7 @@
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
             <?php foreach ($listC as $ds) :
-                $linkdm = "product_cat&id_cat=" . $ds['id'];
+                $linkdm = "product_cat&id=" . $ds['id'];
             ?>
                 <div class="col-lg-2 col-md-6 pb-1">
                     <a class="text-decoration-none" href="">

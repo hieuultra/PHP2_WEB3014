@@ -21,6 +21,11 @@ class Category extends DB
         $sql = "select * from category where id = $id";
         return $this->getData($sql, false);
     }
+    function getNameCat($id)
+    {
+        $sql = "select * from category where id=" . $id;
+        return $this->getData($sql);
+    }
     function update($id, $name)
     {
         $sql = "update category set name='" . $name . "' where id=" . $id;
