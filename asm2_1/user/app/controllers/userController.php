@@ -35,6 +35,15 @@ class UserController
         $onePro = $obj->loadOnePro($id);
         require_once './app/views/detailPro/detail.php';
     }
+    function product_cat()
+    {
+        $id_cat = isset($_GET['id_cat']) ? $_GET['id_cat'] : null;
+        $obj = new Product();
+        $proCat = $obj->getProCat($id_cat);
+        $obj1 = new Category();
+        $listC = $obj1->getAllCategory();
+        require_once './app/views/proCat/product_cat.php';
+    }
     function search_pro()
     {
         if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {

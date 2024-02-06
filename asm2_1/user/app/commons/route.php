@@ -35,6 +35,7 @@ $router->get('viewEditAcc', [App\Controllers\UserController::class, 'viewEditAcc
 $router->post('editAcc', [App\Controllers\UserController::class, 'editAcc']);
 $router->get('pro_detail', [App\Controllers\UserController::class, 'pro_detail']);
 $router->post('search_pro', [App\Controllers\UserController::class, 'search_pro']);
+$router->get('product_cat', [App\Controllers\UserController::class, 'product_cat']);
 
 
 

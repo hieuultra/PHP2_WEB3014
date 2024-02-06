@@ -38,6 +38,11 @@ class Product extends DB
         $sql = "select p.*,c.name as category_name from product p join category c on p.id_cat=c.id where p.id = $id";
         return $this->getData($sql, false);
     }
+    function getProCat($id_cat)
+    {
+        $sql = "select * from product where id_cat=" . $id_cat;
+        return $this->getData($sql);
+    }
     function update($id, $name, $img, $description, $price, $discount, $id_cat)
     {
         $sql = "update product set name='" . $name . "',img='" . $img . "',description='" . $description . "',

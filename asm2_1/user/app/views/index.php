@@ -320,12 +320,14 @@
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
-            <?php foreach ($listC as $ds) : ?>
+            <?php foreach ($listC as $ds) :
+                $linkdm = "product_cat&id_cat=" . $ds['id'];
+            ?>
                 <div class="col-lg-2 col-md-6 pb-1">
                     <a class="text-decoration-none" href="">
                         <div class="cat-item d-flex align-items-center mb-4">
                             <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                                <a href="' . $linkdm . '"> <img class="img-fluid" src="<?= $ds['img'] ?>" alt=""></a>
+                                <a href="<?= $linkdm ?>"> <img class="img-fluid" src="<?= $ds['img'] ?>" alt=""></a>
                             </div>
                             <div class="flex-fill pl-3">
                                 <h6><?= $ds['name'] ?></h6>
@@ -405,8 +407,8 @@
 
         <div class="row px-xl-5 pb-3">
             <!-- Product -->
-            <?php foreach ($listP as $s) : 
-                $tt = $s['price'] - (($s['price']  * $s['discount'] ) / 100);
+            <?php foreach ($listP as $s) :
+                $tt = $s['price'] - (($s['price']  * $s['discount']) / 100);
                 // $hinh = "./app/public/image/" . $img;
                 $linksp = "pro_detail&id=" . $s['id'];
             ?>
