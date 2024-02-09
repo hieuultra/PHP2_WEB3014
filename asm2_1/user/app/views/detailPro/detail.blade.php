@@ -172,20 +172,20 @@
     <div class="col-lg-5 pb-5">
       <!-- List img -->
       <div id="product-carousel" class="carousel slide" data-ride="carousel">
-        <?php
-        if ($onePro) {
-          // extract($onePro);
-          $tt = $onePro['price'] - (($onePro['price'] * $onePro['discount']) / 100);
-        ?>
+       
+        @if ($onePro) 
+         
+         <?php $tt = $onePro['price'] - (($onePro['price'] * $onePro['discount']) / 100);?>
+       
           <div class="carousel-inner border">
             <div class="carousel-item active">
-              <img class="w-100 h-100" src="<?= $onePro['img'] ?>" id="x" />
+              <img class="w-100 h-100" src="{{ $onePro['img'] }}" id="x" />
             </div>
             <div class="carousel-item">
-              <img class="w-100 h-100" src="<?= $onePro['img'] ?>" id="x" />
+              <img class="w-100 h-100" src="{{ $onePro['img'] }}" id="x" />
             </div>
             <div class="carousel-item">
-              <img class="w-100 h-100" src="<?= $onePro['img'] ?>" id="x" />
+              <img class="w-100 h-100" src="{{ $onePro['img'] }}" id="x" />
             </div>
           </div>
 
@@ -202,7 +202,7 @@
     <!-- Product information -->
     <div class="col-lg-7 pb-5">
       <div class="product-details">
-        <h3 class="font-weight-semi-bold"><?= $onePro['name'] ?></h3>
+        <h3 class="font-weight-semi-bold">{{ $onePro['name'] }}</h3>
         <form action="index.php?act=wishlist" method="post" class="like-form">
           <input type="hidden" name="id_pro" value="<?= $id ?>">
           <input type="hidden" name="name_pro" value="<?= $name ?>">
@@ -222,9 +222,9 @@
         </div>
         <small class="pt-1">(50 Reviews)</small>
       </div>
-      <h3 class="font-weight-semi-bold mb-4"><?= number_format($tt, 0, ",", ".") . '$' ?></h3>
+      <h3 class="font-weight-semi-bold mb-4">{{ number_format($tt, 0, ",", ".") . '$' }}</h3>
       <p class="mb-4">
-      <h2><del><?= number_format($onePro['price'], 0, ",", ".") . '$' ?></del></h2>
+      <h2><del>{{ number_format($onePro['price'], 0, ",", ".") . '$' }}</del></h2>
 
       </p>
 
@@ -339,7 +339,7 @@
         <div class="tab-pane fade show active" id="tab-pane-1">
           <h4 class="mb-3">Product Description</h4>
           <p>
-            <?= $onePro['description'] ?>
+            {{ $onePro['description'] }}
           </p>
         </div>
 
@@ -359,7 +359,7 @@
     </div>
   </div>
 </div>
-<?php } ?>
+      @endif
 <!-- Shop Detail End -->
 
 <!-- Products Start -->

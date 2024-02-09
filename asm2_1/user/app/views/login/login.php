@@ -107,7 +107,7 @@
                       <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
                       <div class="d-flex mt-2 justify-content-between">
                         <small>
-                          <a href="forgotPassword">Forgot password?</a>
+                          <a href="viewForgotPassword">Forgot password?</a>
                         </small>
                         <br />
                         <small>

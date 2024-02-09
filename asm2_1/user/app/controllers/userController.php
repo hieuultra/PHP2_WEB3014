@@ -33,7 +33,8 @@ class UserController
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $obj = new Product();
         $onePro = $obj->loadOnePro($id);
-        require_once './app/views/detailPro/detail.php';
+        return $this->views->run('detailPro.detail', ['onePro' => $onePro]);
+        // require_once './app/views/detailPro/detail.php';
     }
     function product_cat()
     {
@@ -147,7 +148,8 @@ class UserController
     }
     function viewForgotPassword()
     {
-        require_once './app/views/forgotPassword/forgot-password.php';
+        return $this->views->run('forgotPassword.forgot-password');
+        // require_once './app/views/forgotPassword/forgot-password.php';
     }
     function forgotPassword()
     {
