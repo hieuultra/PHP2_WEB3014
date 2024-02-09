@@ -134,7 +134,8 @@ class UserController
     }
     function loginSuccess()
     {
-        require_once './app/views/login/login_sucsess.php';
+        // require_once './app/views/login/login_sucsess.php';
+        return $this->views->run('login.login_sucsess');
     }
     function account()
     {
