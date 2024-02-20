@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'hungcv/mvc',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'name' => 'hieu/mvc',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '432905cdb6ea52b9d9aee7b4abd04c457d6525a3',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'eftec/bladeone' => array(
-            'pretty_version' => '4.9',
-            'version' => '4.9.0.0',
-            'reference' => '019036c226086fbe7591360d260067c5d82400ca',
+            'pretty_version' => '4.11',
+            'version' => '4.11.0.0',
+            'reference' => '67be633c33dd4109134ae2ae153750f3ea66b176',
             'type' => 'library',
             'install_path' => __DIR__ . '/../eftec/bladeone',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'hungcv/mvc' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+        'hieu/mvc' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '432905cdb6ea52b9d9aee7b4abd04c457d6525a3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

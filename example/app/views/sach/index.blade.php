@@ -1,3 +1,5 @@
+<h2>LIST BOOK</h2>
+<a href="viewAdd"><input type="button" value="ADD"></a>
 <table border="1">
     <thead>
         <th>ID</th>
@@ -10,14 +12,14 @@
 
          @foreach($lstSach as $sach)
             <tr>
-                <td>{{ $sach['idSach'] }}</td>
-                <td>{{ $sach['tenSach'] }}</td>
-                <td>{{ $sach['tacGia'] }}</td>
-                <td>{{ $sach['soLuong'] }}</td>
-                <td>{{ $sach['gia'] }}</td>
+                <td>{{ $sach['id'] }}</td>
+                <td>{{ $sach['name'] }}</td>
+                <td>{{ $sach['author'] }}</td>
+                <td>{{ $sach['quantity'] }}</td>
+                <td>{{ $sach['price'] }}</td>
                 <th>
-                    <a href="">Sửa</a>
-                    <a href="">Xóa</a>
+                    <a href="getById/{{$sach['id']}}">Sửa</a>
+                    <a href="delete/{{$sach['id']}}" onclick="return confirm('ban co chac chan muon xoa?')" >Xóa</a>
                 </th>
             </tr>
         @endforeach
