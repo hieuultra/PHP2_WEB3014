@@ -3,8 +3,9 @@
 namespace App\models;
 
 use App\models\BaseModel;
+use App\models\SachInterface;
 
-class SachModel extends BaseModel
+class SachModel extends BaseModel implements SachInterface 
 {
     public function getAllBook()
     {
