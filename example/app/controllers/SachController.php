@@ -23,8 +23,28 @@ class SachController extends BaseController
     function add()
     {
         if (isset($_POST['add'])) {
-            $this->book->add($_POST['name'], $_POST['author'], $_POST['quantity'], $_POST['price']);
-            header("location: list ");
+            $error = [];
+            if (empty($_POST['name'])) {
+                $error[] = "Ko dc de trong ten";
+            }
+            if (empty($_POST['author'])) {
+                $error[] = "Ko dc de trong author";
+            }
+            if (empty($_POST['quantity'])) {
+                $error[] = "Ko dc de trong quantity";
+            }
+            if (!is_numeric($_POST['quantity'])) {
+                $error[] = "so luong phai la kieu so";
+            }
+            if (empty($_POST['price'])) {
+                $error[] = "Ko dc de trong price";
+            }
+            if (count($error) > 0) {
+                redirect('errors', $error, 'viewAdd');
+            } else {
+                $this->book->add($_POST['name'], $_POST['author'], $_POST['quantity'], $_POST['price']);
+                header("location: list ");
+            }
         }
     }
     function getById($id)
@@ -37,12 +57,12 @@ class SachController extends BaseController
         if (isset($_POST['update'])) {
             $this->book->update($id, $_POST['name'], $_POST['author'], $_POST['quantity'], $_POST['price']);
             // echo "<script>alert('update succselly')</script>";
-            header("location:  " .route("list"));
+            header("location:  " . route("list"));
         }
     }
     function delete($id)
     {
         $this->book->delete($id);
-        header("location:  " .route("list"));
+        header("location:  " . route("list"));
     }
 }
