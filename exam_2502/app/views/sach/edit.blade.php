@@ -9,4 +9,4 @@
     <input type="text" name="create_at" value="{{$post['create_at']}}">
     <input type="submit" value="edit" name="edit">
 </form>
-<a href="listSach">LIST</a>
+<a href="{{route('listSach')}}">LIST</a>
