@@ -1,3 +1,10 @@
+@if(isset($_SESSION['errors']) && isset($_GET['msg']))
+<ul>
+    @foreach($_SESSION['errors'] as $e)
+            <li style="color: red" >{{$e}}</li>
+    @endforeach
+</ul>
+@endif
 <h2>EDIT BOOK</h2>
 <form action="{{route('update/'.$gBook['id'])}}" method="post">
     <input type="hidden" name="id" value="{{$gBook['id']}}">
