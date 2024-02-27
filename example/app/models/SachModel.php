@@ -12,9 +12,9 @@ class SachModel extends BaseModel implements SachInterface
         $sql = "select * from book";
         return $this->getAllData($sql);
     }
-    public function add($name, $author, $quantity, $price)
+    public function add($name, $author, $quantity, $price,$email)
     {
-        $sql = "insert into book (name, author , quantity, price) values ('$name','$author','$quantity','$price')";
+        $sql = "insert into book (name, author , quantity, price,email) values ('$name','$author','$quantity','$price','$email')";
         return $this->getRowData($sql);
     }
     public function getById($id)

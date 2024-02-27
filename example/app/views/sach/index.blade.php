@@ -7,6 +7,7 @@
         <th>Tác giả</th>
         <th>Số lượng</th>
         <th>Giá</th>
+        <th>Email</th>
     </thead>
     <tbody>
 
@@ -17,6 +18,7 @@
                 <td>{{ $sach['author'] }}</td>
                 <td>{{ $sach['quantity'] }}</td>
                 <td>{{ $sach['price'] }}</td>
+                <td>{{$sach['email']}}</td>
                 <th>
                     <a href="getById/{{$sach['id']}}">Sửa</a>
                     <a href="delete/{{$sach['id']}}" onclick="return confirm('ban co chac chan muon xoa?')" >Xóa</a>

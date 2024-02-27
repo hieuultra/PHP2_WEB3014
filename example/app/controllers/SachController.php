@@ -39,10 +39,15 @@ class SachController extends BaseController
             if (empty($_POST['price'])) {
                 $error[] = "Ko dc de trong price";
             }
+            if (empty($_POST['email'])) {
+                $error[] = "Ko dc de trong email";
+            } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                $error[] = "Định dạng email không hợp lệ";
+            }
             if (count($error) > 0) {
                 redirect('errors', $error, 'viewAdd');
             } else {
-                $this->book->add($_POST['name'], $_POST['author'], $_POST['quantity'], $_POST['price']);
+                $this->book->add($_POST['name'], $_POST['author'], $_POST['quantity'], $_POST['price'], $_POST['email']);
                 header("location: list ");
             }
         }

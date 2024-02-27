@@ -2,7 +2,7 @@
 namespace App\models;
 interface SachInterface{
     function getAllBook();
-    function add($name, $author, $quantity, $price);
+    function add($name, $author, $quantity, $price,$email);
     function getById($id);
     function update($id,$name, $author, $quantity, $price);
     function delete($id);
