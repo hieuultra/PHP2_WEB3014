@@ -208,4 +208,9 @@ class UserController
             echo "<script>window.location.href='viewEditAcc';</script>";
         }
     }
+    function viewCart()
+    {
+        // require_once './app/views/account/account.php';
+        return $this->views->run('viewCart.viewCart');
+    }
 }

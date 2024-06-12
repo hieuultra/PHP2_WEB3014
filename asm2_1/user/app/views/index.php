@@ -142,7 +142,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="./" class="nav-item nav-link active">Home</a>
-                            <a href="shop" class="nav-item nav-link">Shop</a>
+                            <a href="#" class="nav-item nav-link">Shop</a>
 
                             <div class="nav-item dropdown">
                                 <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Brands</a>
@@ -167,7 +167,7 @@
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
-                            <a href="?act=view_cart" class="btn px-0 ml-3">
+                            <a href="viewCart" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -186,7 +186,7 @@
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"></span>
                                 </a>
                             <?php } ?>
-                            <a href="?act=mybill" class="btn px-0">
+                            <a href="mybill" class="btn px-0">
                                 <i class="fas fa-file-invoice-dollar text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>

@@ -67,21 +67,21 @@
 <div class="container-fluid bg-dark mb-30">
     <div class="row px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
-            <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+            <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="/php2yt/asm2_1/user/#navbar-vertical" style="height: 65px; padding: 0 30px;">
                 <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                 <div class="navbar-nav w-100">
-                    <!-- <?php
-                            foreach ($listCat as $c) {
-                                extract($c);
-                                // $linkdm = "index.php?act=product_cat&id_cat=" . $id_cat;
-                                echo '
+                    <?php
+                    foreach ($listcc as $c) {
+                        extract($c);
+                        $linkdm = "product_cat&id=" . $id;
+                        echo '
   <a href="' . $linkdm . '" class="dropdown-item">' . $name . '</a>
   ';
-                            }
-                            ?> -->
+                    }
+                    ?>
                 </div>
             </nav>
         </div>
